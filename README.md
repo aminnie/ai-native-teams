@@ -14,7 +14,7 @@ For the source material behind the pack, see `source-notes.md`.
 The pack is intended to be read as a progression:
 
 1. why software engineering is changing,
-2. how AI should strengthen governance and operating discipline,
+2. why strengthen governance and operating discipline,
 3. how Scrum team roles change,
 4. how the SDLC should be supported by agents, skills, and plugins,
 5. how the main tool patterns compare,
@@ -27,11 +27,11 @@ The pack is intended to be read as a progression:
 
 **Focus:** Why software engineering is changing in the age of AI
 
-This document synthesizes the first two articles in `source-notes.md` and explains:
+This document proposed to explain:
 
 - how software development is shifting from manual code production toward verification, governance, and systems thinking,
 - how the role of the software engineer is changing,
-- and why teams need to redesign their ways of working when AI is involved throughout the lifecycle.
+- and why engineering teams need to redesign their ways of working when AI is involved throughout the lifecycle.
 
 Read this first if the goal is to understand the broader change in engineering work.
 
@@ -50,7 +50,7 @@ Read this second if the goal is to move from the broad shift in engineering to t
 
 ### `ai-team-role-changes.md`
 
-**Focus:** How Scrum team roles change in an AI-supported engineering environment
+**Focus:** How typical Scrum team roles change in an AI-supported engineering environment
 
 This document bridges governance principles and workflow design by explaining:
 
@@ -67,8 +67,8 @@ Read this third if the goal is to understand how governance and AI support trans
 
 This document builds on the first three documents and explains:
 
-- how agents can support each phase of the SDLC,
-- how skills and plugins can encode repeatable engineering practices,
+- how agentic AI tools can support each phase of the SDLC,
+- how agents, skills and plugins can encode repeatable engineering practices,
 - how governance and quality controls should be preserved,
 - and what organizational guardrails are needed so teams benefit from AI without degrading code quality or consistency.
 
