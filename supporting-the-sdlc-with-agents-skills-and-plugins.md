@@ -10,13 +10,12 @@ This document focuses on that question. It follows the governance framing introd
 
 It also adds analysis of where these tools are genuinely useful, where they are risky, and what operating guardrails are needed so that junior and senior engineers alike work in a consistent, reviewable, and trustworthy way.
 
-Before discussing them in detail, it helps to clarify what these mechanisms are. Note:  In this document,`agents` are not to be confused wuth active AI workers that can explore, propose, implement, test, review, or summarize within bounded workflows.  
+Before discussing them in detail, it helps to clarify what these mechanisms are. Note:  In this document,`agents` are not to be confused with active AI workers that can explore, propose, implement, test, review, or summarize within bounded workflows.  
 
-- ++**[AGENTS.md](https://www.google.com/search?q=AGENTS.md&sca_esv=3c4c5acec5573df9&biw=1552&bih=847&sxsrf=ANbL-n7LtDnk_YJP9GtoRLf3Xe6hKSm3IA%3A1775450862736&ei=7jrTacLQLJeFp84P7Y344AY&ved=2ahUKEwjU9-6cttiTAxXLNt4AHbtEHeMQgK4QegQIAxAB&uact=5&oq=explaion+the+difference+between+AI+agents+%28.md%29%2C+skills+and+plug-ins&gs_lp=Egxnd3Mtd2l6LXNlcnAiRGV4cGxhaW9uIHRoZSBkaWZmZXJlbmNlIGJldHdlZW4gQUkgYWdlbnRzICgubWQpLCBza2lsbHMgYW5kIHBsdWctaW5zSLPEAlAAWOi4AnALeACQAQCYAboBoAHYO6oBBTU0LjI3uAEDyAEA-AEBmAJSoAKiOKgCCsICERAuGIAEGJECGNEDGMcBGIoFwgILEAAYgAQYkQIYigXCAhEQLhiABBixAxjRAxiDARjHAcICCxAuGIAEGLEDGIMBwgILEAAYgAQYsQMYgwHCAg4QLhiABBixAxiDARiKBcICERAAGIAEGLEDGIMBGMcDGIoFwgILEC4YgAQY0QMYxwHCAiAQLhiABBiRAhjRAxjHARiKBRiXBRjcBBjeBBjgBNgBAcICBRAAGIAEwgIIEC4YgAQYsQPCAg4QABiABBixAxiDARiKBcICChAuGIAEGEMYigXCAgUQLhiABMICFxAAGIAEGJECGLQCGOcGGIoFGOoC2AECwgIQEC4YAxi0AhjqAhiPAdgBAsICEBAAGAMYtAIY6gIYjwHYAQLCAg4QLhiABBixAxjRAxjHAcICChAAGIAEGEMYigXCAg0QABiABBixAxhDGIoFwgIWEC4YgAQYsQMY0QMYQxiDARjHARiKBcICDRAAGIAEGEMYyQMYigXCAgsQABiABBiSAxiKBcICERAuGIAEGLEDGMcBGI4FGK8BwgILEAAYgAQYsQMYyQPCAggQABiABBiSA8ICIBAuGIAEGLEDGMcBGI4FGK8BGJcFGNwEGN4EGOAE2AEBwgIOEC4YgAQYxwEYjgUYrwHCAh0QLhiABBjHARiOBRivARiXBRjcBBjeBBjgBNgBAcICCBAAGIAEGLEDwgIHEAAYgAQYCsICDBAAGIAEGLEDGAoYC8ICEBAAGIAEGLEDGIMBGIoFGArCAgkQABiABBgKGAvCAgcQABiABBgNwgIQEAAYgAQYsQMYgwEYigUYDcICBhAAGAMYDcICBhAAGA0YHsICBhAAGBYYHsICBRAAGO8FwgIIEAAYCBgNGB7CAgsQABiABBiGAxiKBcICCBAAGIAEGKIEwgIHECEYoAEYCsICBRAhGKsCwgIFECEYnwWYAwTxBTLibdVWw5W0ugYGCAEQARgUugYECAIYB5IHBTQ4LjM0oAeo9AWyBwUzNy4zNLgHgDjCBwc3LjM5LjM2yAfkAYAIAA&sclient=gws-wiz-serp&mstk=AUtExfDjTbJm7uRxuYk6SC4crb1KG9f-U5CZjmxetW-XQTI9rDItcOtpI6yApAfBRxbjDxuEG7IxCG49vB4FG2oTUZ5gZzhDTBL1H8YBkbn8sMaDC6sprgCTxv6ZzfgQjO58teyC6SvFNTjfgRdw-Qh4bIOvqhw2-NdhcdqUs81cTBZzmJlQUSzv1mGfVnz0z1qd8lRW&csui=3)++ (Static Context/Rules):** Is a markdown file in the project root that defines enduring rules for the AI. It is always loaded into the agent's context, providing consistent behavior across tasks.
+- ++**[AGENTS.md++](https://www.google.com/search?q=AGENTS.md&sca_esv=3c4c5acec5573df9&biw=1552&bih=847&sxsrf=ANbL-n7LtDnk_YJP9GtoRLf3Xe6hKSm3IA%3A1775450862736&ei=7jrTacLQLJeFp84P7Y344AY&ved=2ahUKEwjU9-6cttiTAxXLNt4AHbtEHeMQgK4QegQIAxAB&uact=5&oq=explaion+the+difference+between+AI+agents+%28.md%29%2C+skills+and+plug-ins&gs_lp=Egxnd3Mtd2l6LXNlcnAiRGV4cGxhaW9uIHRoZSBkaWZmZXJlbmNlIGJldHdlZW4gQUkgYWdlbnRzICgubWQpLCBza2lsbHMgYW5kIHBsdWctaW5zSLPEAlAAWOi4AnALeACQAQCYAboBoAHYO6oBBTU0LjI3uAEDyAEA-AEBmAJSoAKiOKgCCsICERAuGIAEGJECGNEDGMcBGIoFwgILEAAYgAQYkQIYigXCAhEQLhiABBixAxjRAxiDARjHAcICCxAuGIAEGLEDGIMBwgILEAAYgAQYsQMYgwHCAg4QLhiABBixAxiDARiKBcICERAAGIAEGLEDGIMBGMcDGIoFwgILEC4YgAQY0QMYxwHCAiAQLhiABBiRAhjRAxjHARiKBRiXBRjcBBjeBBjgBNgBAcICBRAAGIAEwgIIEC4YgAQYsQPCAg4QABiABBixAxiDARiKBcICChAuGIAEGEMYigXCAgUQLhiABMICFxAAGIAEGJECGLQCGOcGGIoFGOoC2AECwgIQEC4YAxi0AhjqAhiPAdgBAsICEBAAGAMYtAIY6gIYjwHYAQLCAg4QLhiABBixAxjRAxjHAcICChAAGIAEGEMYigXCAg0QABiABBixAxhDGIoFwgIWEC4YgAQYsQMY0QMYQxiDARjHARiKBcICDRAAGIAEGEMYyQMYigXCAgsQABiABBiSAxiKBcICERAuGIAEGLEDGMcBGI4FGK8BwgILEAAYgAQYsQMYyQPCAggQABiABBiSA8ICIBAuGIAEGLEDGMcBGI4FGK8BGJcFGNwEGN4EGOAE2AEBwgIOEC4YgAQYxwEYjgUYrwHCAh0QLhiABBjHARiOBRivARiXBRjcBBjeBBjgBNgBAcICCBAAGIAEGLEDwgIHEAAYgAQYCsICDBAAGIAEGLEDGAoYC8ICEBAAGIAEGLEDGIMBGIoFGArCAgkQABiABBgKGAvCAgcQABiABBgNwgIQEAAYgAQYsQMYgwEYigUYDcICBhAAGAMYDcICBhAAGA0YHsICBhAAGBYYHsICBRAAGO8FwgIIEAAYCBgNGB7CAgsQABiABBiGAxiKBcICCBAAGIAEGKIEwgIHECEYoAEYCsICBRAhGKsCwgIFECEYnwWYAwTxBTLibdVWw5W0ugYGCAEQARgUugYECAIYB5IHBTQ4LjM0oAeo9AWyBwUzNy4zNLgHgDjCBwc3LjM5LjM2yAfkAYAIAA&sclient=gws-wiz-serp&mstk=AUtExfDjTbJm7uRxuYk6SC4crb1KG9f-U5CZjmxetW-XQTI9rDItcOtpI6yApAfBRxbjDxuEG7IxCG49vB4FG2oTUZ5gZzhDTBL1H8YBkbn8sMaDC6sprgCTxv6ZzfgQjO58teyC6SvFNTjfgRdw-Qh4bIOvqhw2-NdhcdqUs81cTBZzmJlQUSzv1mGfVnz0z1qd8lRW&csui=3) (Static Context/Rules):** Is a markdown file in the project root that defines enduring rules for the AI. It is always loaded into the agent's context, providing consistent behavior across tasks.
+- ++**[Skills++](https://www.google.com/search?q=Skills&sca_esv=3c4c5acec5573df9&biw=1552&bih=847&sxsrf=ANbL-n7LtDnk_YJP9GtoRLf3Xe6hKSm3IA%3A1775450862736&ei=7jrTacLQLJeFp84P7Y344AY&ved=2ahUKEwjU9-6cttiTAxXLNt4AHbtEHeMQgK4QegQIAxAD&uact=5&oq=explaion+the+difference+between+AI+agents+%28.md%29%2C+skills+and+plug-ins&gs_lp=Egxnd3Mtd2l6LXNlcnAiRGV4cGxhaW9uIHRoZSBkaWZmZXJlbmNlIGJldHdlZW4gQUkgYWdlbnRzICgubWQpLCBza2lsbHMgYW5kIHBsdWctaW5zSLPEAlAAWOi4AnALeACQAQCYAboBoAHYO6oBBTU0LjI3uAEDyAEA-AEBmAJSoAKiOKgCCsICERAuGIAEGJECGNEDGMcBGIoFwgILEAAYgAQYkQIYigXCAhEQLhiABBixAxjRAxiDARjHAcICCxAuGIAEGLEDGIMBwgILEAAYgAQYsQMYgwHCAg4QLhiABBixAxiDARiKBcICERAAGIAEGLEDGIMBGMcDGIoFwgILEC4YgAQY0QMYxwHCAiAQLhiABBiRAhjRAxjHARiKBRiXBRjcBBjeBBjgBNgBAcICBRAAGIAEwgIIEC4YgAQYsQPCAg4QABiABBixAxiDARiKBcICChAuGIAEGEMYigXCAgUQLhiABMICFxAAGIAEGJECGLQCGOcGGIoFGOoC2AECwgIQEC4YAxi0AhjqAhiPAdgBAsICEBAAGAMYtAIY6gIYjwHYAQLCAg4QLhiABBixAxjRAxjHAcICChAAGIAEGEMYigXCAg0QABiABBixAxhDGIoFwgIWEC4YgAQYsQMY0QMYQxiDARjHARiKBcICDRAAGIAEGEMYyQMYigXCAgsQABiABBiSAxiKBcICERAuGIAEGLEDGMcBGI4FGK8BwgILEAAYgAQYsQMYyQPCAggQABiABBiSA8ICIBAuGIAEGLEDGMcBGI4FGK8BGJcFGNwEGN4EGOAE2AEBwgIOEC4YgAQYxwEYjgUYrwHCAh0QLhiABBjHARiOBRivARiXBRjcBBjeBBjgBNgBAcICCBAAGIAEGLEDwgIHEAAYgAQYCsICDBAAGIAEGLEDGAoYC8ICEBAAGIAEGLEDGIMBGIoFGArCAgkQABiABBgKGAvCAgcQABiABBgNwgIQEAAYgAQYsQMYgwEYigUYDcICBhAAGAMYDcICBhAAGA0YHsICBhAAGBYYHsICBRAAGO8FwgIIEAAYCBgNGB7CAgsQABiABBiGAxiKBcICCBAAGIAEGKIEwgIHECEYoAEYCsICBRAhGKsCwgIFECEYnwWYAwTxBTLibdVWw5W0ugYGCAEQARgUugYECAIYB5IHBTQ4LjM0oAeo9AWyBwUzNy4zNLgHgDjCBwc3LjM5LjM2yAfkAYAIAA&sclient=gws-wiz-serp&mstk=AUtExfDjTbJm7uRxuYk6SC4crb1KG9f-U5CZjmxetW-XQTI9rDItcOtpI6yApAfBRxbjDxuEG7IxCG49vB4FG2oTUZ5gZzhDTBL1H8YBkbn8sMaDC6sprgCTxv6ZzfgQjO58teyC6SvFNTjfgRdw-Qh4bIOvqhw2-NdhcdqUs81cTBZzmJlQUSzv1mGfVnz0z1qd8lRW&csui=3) (On-demand Behavior):** Is a folder containing instructions (and sometimes reference documents and scripts) that the AI loads only when needed. They are used for specific, repeatable tasks like "run test suite" or "create Pull Request".
+- ++**[Plugins++](https://www.google.com/search?q=Plugins&sca_esv=3c4c5acec5573df9&biw=1552&bih=847&sxsrf=ANbL-n7LtDnk_YJP9GtoRLf3Xe6hKSm3IA%3A1775450862736&ei=7jrTacLQLJeFp84P7Y344AY&ved=2ahUKEwjU9-6cttiTAxXLNt4AHbtEHeMQgK4QegQIAxAF&uact=5&oq=explaion+the+difference+between+AI+agents+%28.md%29%2C+skills+and+plug-ins&gs_lp=Egxnd3Mtd2l6LXNlcnAiRGV4cGxhaW9uIHRoZSBkaWZmZXJlbmNlIGJldHdlZW4gQUkgYWdlbnRzICgubWQpLCBza2lsbHMgYW5kIHBsdWctaW5zSLPEAlAAWOi4AnALeACQAQCYAboBoAHYO6oBBTU0LjI3uAEDyAEA-AEBmAJSoAKiOKgCCsICERAuGIAEGJECGNEDGMcBGIoFwgILEAAYgAQYkQIYigXCAhEQLhiABBixAxjRAxiDARjHAcICCxAuGIAEGLEDGIMBwgILEAAYgAQYsQMYgwHCAg4QLhiABBixAxiDARiKBcICERAAGIAEGLEDGIMBGMcDGIoFwgILEC4YgAQY0QMYxwHCAiAQLhiABBiRAhjRAxjHARiKBRiXBRjcBBjeBBjgBNgBAcICBRAAGIAEwgIIEC4YgAQYsQPCAg4QABiABBixAxiDARiKBcICChAuGIAEGEMYigXCAgUQLhiABMICFxAAGIAEGJECGLQCGOcGGIoFGOoC2AECwgIQEC4YAxi0AhjqAhiPAdgBAsICEBAAGAMYtAIY6gIYjwHYAQLCAg4QLhiABBixAxjRAxjHAcICChAAGIAEGEMYigXCAg0QABiABBixAxhDGIoFwgIWEC4YgAQYsQMY0QMYQxiDARjHARiKBcICDRAAGIAEGEMYyQMYigXCAgsQABiABBiSAxiKBcICERAuGIAEGLEDGMcBGI4FGK8BwgILEAAYgAQYsQMYyQPCAggQABiABBiSA8ICIBAuGIAEGLEDGMcBGI4FGK8BGJcFGNwEGN4EGOAE2AEBwgIOEC4YgAQYxwEYjgUYrwHCAh0QLhiABBjHARiOBRivARiXBRjcBBjeBBjgBNgBAcICCBAAGIAEGLEDwgIHEAAYgAQYCsICDBAAGIAEGLEDGAoYC8ICEBAAGIAEGLEDGIMBGIoFGArCAgkQABiABBgKGAvCAgcQABiABBgNwgIQEAAYgAQYsQMYgwEYigUYDcICBhAAGAMYDcICBhAAGA0YHsICBhAAGBYYHsICBRAAGO8FwgIIEAAYCBgNGB7CAgsQABiABBiGAxiKBcICCBAAGIAEGKIEwgIHECEYoAEYCsICBRAhGKsCwgIFECEYnwWYAwTxBTLibdVWw5W0ugYGCAEQARgUugYECAIYB5IHBTQ4LjM0oAeo9AWyBwUzNy4zNLgHgDjCBwc3LjM5LjM2yAfkAYAIAA&sclient=gws-wiz-serp&mstk=AUtExfDjTbJm7uRxuYk6SC4crb1KG9f-U5CZjmxetW-XQTI9rDItcOtpI6yApAfBRxbjDxuEG7IxCG49vB4FG2oTUZ5gZzhDTBL1H8YBkbn8sMaDC6sprgCTxv6ZzfgQjO58teyC6SvFNTjfgRdw-Qh4bIOvqhw2-NdhcdqUs81cTBZzmJlQUSzv1mGfVnz0z1qd8lRW&csui=3) (Packaged Functionality):** Is a container that combines multiple skills, system prompts, and configuration settings (like MCP) into a single installable unit. They are designed to package entire workflows and make sharing them
 
-- ++**[Skills](https://www.google.com/search?q=Skills&sca_esv=3c4c5acec5573df9&biw=1552&bih=847&sxsrf=ANbL-n7LtDnk_YJP9GtoRLf3Xe6hKSm3IA%3A1775450862736&ei=7jrTacLQLJeFp84P7Y344AY&ved=2ahUKEwjU9-6cttiTAxXLNt4AHbtEHeMQgK4QegQIAxAD&uact=5&oq=explaion+the+difference+between+AI+agents+%28.md%29%2C+skills+and+plug-ins&gs_lp=Egxnd3Mtd2l6LXNlcnAiRGV4cGxhaW9uIHRoZSBkaWZmZXJlbmNlIGJldHdlZW4gQUkgYWdlbnRzICgubWQpLCBza2lsbHMgYW5kIHBsdWctaW5zSLPEAlAAWOi4AnALeACQAQCYAboBoAHYO6oBBTU0LjI3uAEDyAEA-AEBmAJSoAKiOKgCCsICERAuGIAEGJECGNEDGMcBGIoFwgILEAAYgAQYkQIYigXCAhEQLhiABBixAxjRAxiDARjHAcICCxAuGIAEGLEDGIMBwgILEAAYgAQYsQMYgwHCAg4QLhiABBixAxiDARiKBcICERAAGIAEGLEDGIMBGMcDGIoFwgILEC4YgAQY0QMYxwHCAiAQLhiABBiRAhjRAxjHARiKBRiXBRjcBBjeBBjgBNgBAcICBRAAGIAEwgIIEC4YgAQYsQPCAg4QABiABBixAxiDARiKBcICChAuGIAEGEMYigXCAgUQLhiABMICFxAAGIAEGJECGLQCGOcGGIoFGOoC2AECwgIQEC4YAxi0AhjqAhiPAdgBAsICEBAAGAMYtAIY6gIYjwHYAQLCAg4QLhiABBixAxjRAxjHAcICChAAGIAEGEMYigXCAg0QABiABBixAxhDGIoFwgIWEC4YgAQYsQMY0QMYQxiDARjHARiKBcICDRAAGIAEGEMYyQMYigXCAgsQABiABBiSAxiKBcICERAuGIAEGLEDGMcBGI4FGK8BwgILEAAYgAQYsQMYyQPCAggQABiABBiSA8ICIBAuGIAEGLEDGMcBGI4FGK8BGJcFGNwEGN4EGOAE2AEBwgIOEC4YgAQYxwEYjgUYrwHCAh0QLhiABBjHARiOBRivARiXBRjcBBjeBBjgBNgBAcICCBAAGIAEGLEDwgIHEAAYgAQYCsICDBAAGIAEGLEDGAoYC8ICEBAAGIAEGLEDGIMBGIoFGArCAgkQABiABBgKGAvCAgcQABiABBgNwgIQEAAYgAQYsQMYgwEYigUYDcICBhAAGAMYDcICBhAAGA0YHsICBhAAGBYYHsICBRAAGO8FwgIIEAAYCBgNGB7CAgsQABiABBiGAxiKBcICCBAAGIAEGKIEwgIHECEYoAEYCsICBRAhGKsCwgIFECEYnwWYAwTxBTLibdVWw5W0ugYGCAEQARgUugYECAIYB5IHBTQ4LjM0oAeo9AWyBwUzNy4zNLgHgDjCBwc3LjM5LjM2yAfkAYAIAA&sclient=gws-wiz-serp&mstk=AUtExfDjTbJm7uRxuYk6SC4crb1KG9f-U5CZjmxetW-XQTI9rDItcOtpI6yApAfBRxbjDxuEG7IxCG49vB4FG2oTUZ5gZzhDTBL1H8YBkbn8sMaDC6sprgCTxv6ZzfgQjO58teyC6SvFNTjfgRdw-Qh4bIOvqhw2-NdhcdqUs81cTBZzmJlQUSzv1mGfVnz0z1qd8lRW&csui=3)++ (On-demand Behavior):** Is a folder containing instructions (and sometimes reference documents and scripts) that the AI loads only when needed. They are used for specific, repeatable tasks like "run test suite" or "create Pull Request".
-- ++**[Plugins](https://www.google.com/search?q=Plugins&sca_esv=3c4c5acec5573df9&biw=1552&bih=847&sxsrf=ANbL-n7LtDnk_YJP9GtoRLf3Xe6hKSm3IA%3A1775450862736&ei=7jrTacLQLJeFp84P7Y344AY&ved=2ahUKEwjU9-6cttiTAxXLNt4AHbtEHeMQgK4QegQIAxAF&uact=5&oq=explaion+the+difference+between+AI+agents+%28.md%29%2C+skills+and+plug-ins&gs_lp=Egxnd3Mtd2l6LXNlcnAiRGV4cGxhaW9uIHRoZSBkaWZmZXJlbmNlIGJldHdlZW4gQUkgYWdlbnRzICgubWQpLCBza2lsbHMgYW5kIHBsdWctaW5zSLPEAlAAWOi4AnALeACQAQCYAboBoAHYO6oBBTU0LjI3uAEDyAEA-AEBmAJSoAKiOKgCCsICERAuGIAEGJECGNEDGMcBGIoFwgILEAAYgAQYkQIYigXCAhEQLhiABBixAxjRAxiDARjHAcICCxAuGIAEGLEDGIMBwgILEAAYgAQYsQMYgwHCAg4QLhiABBixAxiDARiKBcICERAAGIAEGLEDGIMBGMcDGIoFwgILEC4YgAQY0QMYxwHCAiAQLhiABBiRAhjRAxjHARiKBRiXBRjcBBjeBBjgBNgBAcICBRAAGIAEwgIIEC4YgAQYsQPCAg4QABiABBixAxiDARiKBcICChAuGIAEGEMYigXCAgUQLhiABMICFxAAGIAEGJECGLQCGOcGGIoFGOoC2AECwgIQEC4YAxi0AhjqAhiPAdgBAsICEBAAGAMYtAIY6gIYjwHYAQLCAg4QLhiABBixAxjRAxjHAcICChAAGIAEGEMYigXCAg0QABiABBixAxhDGIoFwgIWEC4YgAQYsQMY0QMYQxiDARjHARiKBcICDRAAGIAEGEMYyQMYigXCAgsQABiABBiSAxiKBcICERAuGIAEGLEDGMcBGI4FGK8BwgILEAAYgAQYsQMYyQPCAggQABiABBiSA8ICIBAuGIAEGLEDGMcBGI4FGK8BGJcFGNwEGN4EGOAE2AEBwgIOEC4YgAQYxwEYjgUYrwHCAh0QLhiABBjHARiOBRivARiXBRjcBBjeBBjgBNgBAcICCBAAGIAEGLEDwgIHEAAYgAQYCsICDBAAGIAEGLEDGAoYC8ICEBAAGIAEGLEDGIMBGIoFGArCAgkQABiABBgKGAvCAgcQABiABBgNwgIQEAAYgAQYsQMYgwEYigUYDcICBhAAGAMYDcICBhAAGA0YHsICBhAAGBYYHsICBRAAGO8FwgIIEAAYCBgNGB7CAgsQABiABBiGAxiKBcICCBAAGIAEGKIEwgIHECEYoAEYCsICBRAhGKsCwgIFECEYnwWYAwTxBTLibdVWw5W0ugYGCAEQARgUugYECAIYB5IHBTQ4LjM0oAeo9AWyBwUzNy4zNLgHgDjCBwc3LjM5LjM2yAfkAYAIAA&sclient=gws-wiz-serp&mstk=AUtExfDjTbJm7uRxuYk6SC4crb1KG9f-U5CZjmxetW-XQTI9rDItcOtpI6yApAfBRxbjDxuEG7IxCG49vB4FG2oTUZ5gZzhDTBL1H8YBkbn8sMaDC6sprgCTxv6ZzfgQjO58teyC6SvFNTjfgRdw-Qh4bIOvqhw2-NdhcdqUs81cTBZzmJlQUSzv1mGfVnz0z1qd8lRW&csui=3)++ (Packaged Functionality):** Is a container that combines multiple skills, system prompts, and configuration settings (like MCP) into a single installable unit. They are designed to package entire workflows and make sharing them  
-  
 These mechanisms were introduced because ad hoc prompting and direct `prompt -> AI -> code` workflows do not scale well. At larger scale, those approaches create inconsistency, hidden assumptions, weak traceability, and uneven quality. Agents, skills, plugins, and persistent repository guidance help address those problems by making AI-assisted work more structured, repeatable, reviewable, and governable and available to all participating team members.
 
 ## Position in the Series
@@ -33,7 +32,7 @@ This document builds on those ideas by looking at the SDLC itself and asking how
 
 The most important lesson from both the `OpenAI` and `Claude Code /feature-dev` materials is that the value does not come from "letting the model code." It comes from structuring the work.
 
-The `Claude Code` `/feature-dev` plugin is useful here because it makes the workflow explicit. Rather than jumping directly from request to implementation, it moves through seven phases:
+The `Claude Code` `/feature-dev` plugin is useful demonstration of how to makes the entire SDLC workflow explicit. Rather than jumping directly from request to implementation, it moves through seven phases:
 
 1. discovery,
 2. codebase exploration,
@@ -54,31 +53,63 @@ This is the real inflection point. The future is unlikely to be "one super-agent
 - repository-level instructions and conventions,
 - and human checkpoints at the points where ambiguity, risk, or trade-offs matter most.
 
-In other words, the most useful AI support is not just smarter generation. It is better engineering process encoded into the toolchain.
+In other words, the most useful AI support is not just smarter generation. It is better engineering process encoded into the toolchain.  
+
+It should also be noted that agents, skills and plugins are supported by numerous AI enabled IDE and CLI offerings, and that there is a healthy degree of portability between environments. 
 
 ## 2. A Practical Model: What Each Tool Type Does
 
 Before looking phase by phase, it helps to distinguish three categories of support.
 
-### 2.1 Agents
+### 2.1 Agents (AGENTS.md)
 
-Agents are the active workers. They explore, propose, implement, test, review, and summarize.
+`AGENTS.md` is an open standard Markdown file placed in the root of a software repository to provide specific, actionable instructions to AI coding agents and assistants. It functions as a kind of README for machines, bridging the gap between general AI knowledge and the specific requirements of a project, such as build commands, coding style, and testing rules.
 
-Examples:
+Purpose and function:
 
-- `Claude Code` using `/feature-dev` or specialized agents such as code-explorer, code-architect, and code-reviewer.
-- `OpenAI Codex`-style agents working across a repository with access to tests, linters, planning instructions, and operational tools.
+- Centralized instructions: it gives AI agents a single, predictable location for project rules, reducing the need to repeat instructions across prompts.
+- Complements `README.md`: while `README.md` is written primarily for humans, `AGENTS.md` focuses on the context AI needs in order to work productively.
+- Improved consistency: by defining coding standards, file structures, and dependencies in one place, it helps agents produce more consistent and accurate output.
+- Broad adoption: the pattern is supported across a growing set of AI coding tools and environments.
 
-Agents are strongest when the task has:
+Typical content in an `AGENTS.md` file:
 
-- a defined scope,
-- visible constraints,
-- accessible repository context,
-- and a verifiable end condition.
+- Project overview: a brief description of the technology stack and purpose.
+- Build and test commands: specific commands for installing dependencies, running builds, and executing tests.
+- Code style and guidelines: formatting preferences, architectural patterns, and linting rules.
+- Dos and don'ts: boundaries on what the agent should not do, such as not using legacy APIs or not modifying particular directories.
+- File structure: pointers to key directories and important locations in the repository.
+
+How agents use it:
+
+- Nesting and precedence: in larger repositories, nested `AGENTS.md` files can be used, with the closest one taking precedence for local work.
+- Automatic execution support: if test or validation commands are listed, agents can use them as part of their workflow.
+- Tool-agnostic guidance: it allows teams to define rules once and apply them across multiple compatible AI tools.
 
 ### 2.2 Skills and Plugins
 
 Skills and plugins are part of the process layer. They package good engineering habits into reusable forms, but at different levels of scope.
+
+`skill.md` or `skills.md` is an emerging open-standard Markdown format used to define specific, reusable capabilities for AI agents. A skill acts as modular, on-demand procedural knowledge: instead of asking the agent to infer how to perform a task from a short prompt, the team provides a reusable recipe for doing that task well.
+
+Typical characteristics of skills:
+
+- On-demand behavior: skills are usually loaded only when relevant, which helps avoid prompt bloat and keeps context focused.
+- Procedural guidance: they provide step-by-step instructions for repeatable tasks such as analyzing logs, generating API tests, running a security review, or preparing a pull request.
+- Portable structure: they are often organized as a directory containing a `skill.md` file plus optional scripts, templates, examples, or supporting resources.
+- Reproducibility: they help ensure the same task is performed in a similar way each time, which improves consistency and makes outcomes easier to review.
+
+Typical content in a skill definition:
+
+- Metadata: a clear name and description.
+- Instructions: explicit step-by-step guidance for how the task should be performed.
+- Optional resources: scripts, examples, or templates that support execution.
+
+Skills are especially useful because they reduce the need for one large, overloaded prompt. Instead of repeatedly restating the same multi-step behavior, the team can encode it once and reuse it across projects and tools.
+
+
+
+Plugins operate at a broader level. A plugin can bundle multiple skills, prompts, workflow rules, and sometimes tool integrations into a more complete installable package. If a skill is a reusable recipe for a specific task, a plugin is closer to a packaged workflow system that makes a fuller method easy to install, invoke, and share.
 
 Examples:
 
@@ -86,7 +117,7 @@ Examples:
 - a packaged plugin such as `Claude Code` `/feature-dev`,
 - and standard agent workflows for feature delivery, bug fixing, or dependency upgrades.
 
-Skills are typically narrower and loaded when needed for a specific repeatable task. Plugins are broader and package a fuller workflow so it can be installed, invoked, and reused more consistently. Both are important because they reduce variation in how people use AI. Without them, every engineer invents their own prompting style and quality bar. With them, the team gets a more repeatable way of working.
+The distinction from `AGENTS.md` is important. `AGENTS.md` provides persistent project-level rules and context. Skills define portable, task-specific actions that can be loaded when needed. Plugins package larger sets of behaviors and workflow support. Together, they reduce variation in how people use AI. Without them, every engineer invents a different prompting style and quality bar. With them, the team gets a more repeatable way of working.
 
 ### 2.3 Repository Context and Guardrail Files
 
@@ -102,13 +133,29 @@ Examples:
 - service ownership maps,
 - and release or incident runbooks.
 
-These artifacts help ensure that the model sees not only the code, but also the operating expectations around the code.
+### 2.4 Worker Agents
+
+An extra note: These type of agents are the active workers. They explore, propose, implement, test, review, and summarize. Claude Code and Open Codex may instantiate multiple instances of agents to for instance explore the code base concurrently during a change impact analysis, code reviews, etc.
+
+Examples:
+
+- `Claude Code` using `/feature-dev` or specialized agents such as code-explorer, code-architect, and code-reviewer.
+- `OpenAI Codex`-style agents working across a repository with access to tests, linters, planning instructions, and operational tools.
+
+Worked agents are strongest when the task has:
+
+- a defined scope,
+- visible constraints,
+- accessible repository context,
+- and a verifiable end condition.
+
+The artifacts presented above help ensure that the model sees not only the code, but also the operating expectations around the code.
 
 This matters because a powerful agent without local context tends to produce generic output. A somewhat less powerful agent with good local guidance often produces more useful and more compliant work.
 
 ## 3. Supporting the SDLC Phase by Phase
 
-The `OpenAI` article already outlines seven SDLC phases. This document keeps those, but expands them into eight practical phases by splitting production delivery from ongoing maintenance. That produces a more operationally useful model:
+This document proposes 7 phases of the SDLC below, and expands them into eight practical phases by splitting production delivery from ongoing maintenance. That produces a more operationally useful model:
 
 1. Discover and scope
 2. Plan
@@ -153,6 +200,8 @@ Skills and plugins can standardize this phase by requiring the agent to always a
 - What constraints already exist?
 - What is out of scope?
 - What assumptions still need human confirmation?
+- Via scripts or MCP integrations directly access e.g. ticketing systems   
+
 
 This kind of standardization is especially valuable for junior engineers, because it teaches a repeatable way to frame work rather than rewarding vague prompting.
 
@@ -175,7 +224,7 @@ Planning turns a scoped problem into a practical delivery approach.
 
 Agents can:
 
-- break a feature into sub-tasks,
+- break an epic or a feature into user stories and sub-tasks,
 - identify dependencies and sequencing,
 - draft acceptance criteria,
 - propose milestone plans,
