@@ -10,6 +10,8 @@ This document focuses on that question. It follows the governance framing introd
 
 It also adds analysis of where these tools are genuinely useful, where they are risky, and what operating guardrails are needed so that junior and senior engineers alike work in a consistent, reviewable, and trustworthy way.
 
+Before discussing them in detail, it helps to clarify what these mechanisms are. In this document, `agents` are active AI workers that can explore, propose, implement, test, review, or summarize within bounded workflows. `Skills` are reusable instructions or patterns that encode good engineering practice. `Plugins` are packaged workflow extensions that make structured methods easier to invoke and repeat. They are introduced because ad hoc prompting and direct `prompt -> AI -> code` workflows do not scale well. At larger scale, those approaches create inconsistency, hidden assumptions, weak traceability, and uneven quality. Agents, skills, and plugins help address those problems by making AI-assisted work more structured, repeatable, reviewable, and governable.
+
 ## Position in the Series
 
 The earlier documents establish three ideas that this document takes as given:
