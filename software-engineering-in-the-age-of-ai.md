@@ -2,10 +2,11 @@
 
 ## Overview
 
-This document synthesizes two articles:
+This document synthesizes two articles and a third supporting note:
 
 1. A `Built In` article on how software development and the role of the software engineer are changing in the age of AI-assisted coding.
 2. An `OpenAI` article on how engineering teams should adapt their ways of working as AI becomes involved across the software development lifecycle.
+3. A protocol-driven AI-assisted engineering note, used here more generally as a pattern for agent-driven development.
 
 Taken together, the articles argue that software engineering is not disappearing, but its center of gravity is shifting. The value of engineers is moving away from manual code production and toward judgment, verification, architectural stewardship, and organizational design. At the same time, engineering teams need to redesign how they plan, build, test, review, document, and operate software so that AI can be used productively without undermining quality or ownership.
 
@@ -31,6 +32,14 @@ The article therefore reframes the engineer's role. Instead of being primarily a
 - maintaining architectural integrity,
 - protecting security and compliance boundaries,
 - and making accountable decisions about what should and should not enter production.
+
+An important extension to this idea comes from agent based approaches to AI-assisted engineering, which can be generalized here as agent-driven development. These approaches start from the observation that the failure mode of naive AI coding is not simply that the model makes mistakes. The deeper problem is that a weakly governed workflow often looks like `prompt -> AI -> code`, which may work for small experiments such as greenfield projects or proof-of-concepts, but breaks down as systems grow in complexity. In that model, the generator is probabilistic and the surrounding engineering process is too underdefined to reliably contain architecture drift, hidden assumptions, inconsistent patterns, review bottlenecks, and fragile systems that compile but are difficult to reason about.
+
+The agent-driven response is to treat the engineering process itself as the control system. The AI can remain probabilistic, but the delivery pipeline around it should become more deterministic. In practice, that means inserting explicit engineering protocols between intent and implementation: specification before generation, architectural rules before code production, validation and contracts after generation, and policy checks before acceptance. Rather than asking the model to improvise its way from request to finished code, the team defines the sequence, constraints, interfaces, and validation layers the model must work within.
+
+This idea strengthens claim that the engineer's role is shifting toward governance. If the scarce capability is no longer syntax production but predictable system delivery, then engineers increasingly create value by designing the protocols that govern generation. They define module boundaries, interfaces, dependencies, quality gates, tests, review expectations, and acceptance criteria so that outcomes become more legible and more reliable. In that model, agents act as implementation engines inside a constrained engineering system rather than as autonomous substitutes for engineering judgment.
+
+Seen this way, the role of the software engineer changes in two related directions at once. First, the engineer becomes a reviewer and governor of probabilistic output. Second, the engineer becomes a designer of the deterministic process around that output. The more AI accelerates code production, the more important it becomes to govern specification, architecture, validation, and traceability as first-class engineering work.
 
 The article also suggests that junior-to-senior development pathways may be disrupted. If entry-level work is increasingly automated, organizations will need new ways to help engineers develop judgment, especially through exposure to failure analysis, debugging, and system repair rather than just raw implementation.
 
