@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This document is the sixth component of the AI-native engineering pack. It turns the earlier analysis into a practical roadmap for introducing agents, skills, and plugins into an engineering organization in a controlled and useful way.
+This document is the seventh component of the AI-native engineering pack. It turns the earlier analysis into a practical roadmap for introducing agents, skills, and plugins into an engineering organization in a controlled and useful way.
 
 The goal is not simply to "roll out AI tools." The goal is to improve engineering throughput, consistency, and quality while preserving governance, codebase integrity, and clear human accountability.
 
@@ -10,6 +10,7 @@ This roadmap assumes the organization has already accepted the broad conclusions
 
 - software engineering is shifting toward judgment, verification, and governance,
 - AI should be used to strengthen governance, consistency, traceability, and accountability across engineering work,
+- Scrum team roles and responsibilities change meaningfully once AI becomes part of delivery,
 - the SDLC should be deliberately supported by agents rather than casually augmented,
 - structured workflows matter more than raw model capability,
 - and human ownership must remain explicit at key decision points.

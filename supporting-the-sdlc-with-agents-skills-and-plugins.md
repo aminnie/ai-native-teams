@@ -2,29 +2,23 @@
 
 ## Overview
 
-This document assumes the reader has already read `software-engineering-in-the-age-of-ai.md` and `governing-ai-supported-engineering.md` and accepts the central premise: software engineering is changing, teams need to adapt, and human accountability remains essential even as AI takes on more of the mechanical work.
+This document assumes the reader has already read `software-engineering-in-the-age-of-ai.md`, `governing-ai-supported-engineering.md`, and `ai-team-role-changes.md` and accepts the central premise: software engineering is changing, teams need to adapt, and human accountability remains essential even as AI takes on more of the mechanical work.
 
 The question now is more practical: how should the software development lifecycle be supported by agents, skills, and plugins so that a team can improve speed without losing governance, consistency, code quality, or architectural integrity?
 
-This document focuses on that question. It follows the governance framing introduced in `governing-ai-supported-engineering.md` and uses the earlier `OpenAI` article on AI-native engineering teams and the additional point 3 links in `hybrid-teams.md`, especially the `Claude Code` `/feature-dev` workflow, to outline how tools such as `Claude Code` and `OpenAI Codex` can support the SDLC in concrete ways.
+This document focuses on that question. It follows the governance framing introduced in `governing-ai-supported-engineering.md`, builds on the role implications outlined in `ai-team-role-changes.md`, and uses the earlier `OpenAI` article on AI-native engineering teams and the additional point 3 links in `source-notes.md`, especially the `Claude Code` `/feature-dev` workflow, to outline how tools such as `Claude Code` and `OpenAI Codex` can support the SDLC in concrete ways.
 
 It also adds analysis of where these tools are genuinely useful, where they are risky, and what operating guardrails are needed so that junior and senior engineers alike work in a consistent, reviewable, and trustworthy way.
 
-## Short Recap from `software-engineering-in-the-age-of-ai.md`
+## Position in the Series
 
-The first document argued that:
+The earlier documents establish three ideas that this document takes as given:
 
-- code generation is becoming cheaper and faster,
-- verification, judgment, and system stewardship are becoming more valuable,
-- engineering teams need to adapt how they work rather than simply adding AI to existing habits,
-- and the role of the engineer is shifting from syntax producer toward systems governor, reviewer, and accountable owner.
+- software engineering is shifting from manual code production toward verification, governance, and stewardship,
+- AI should be introduced as part of a governed operating model rather than as ad hoc tooling,
+- and Scrum team roles change meaningfully once AI becomes part of delivery.
 
-This document takes the next step. If those ideas are true, and if the governance concerns in `governing-ai-supported-engineering.md` are taken seriously, then the SDLC should be redesigned so that:
-
-- agents assist in each phase where structured support is useful,
-- skills and plugins encode repeatable team practices,
-- repositories expose the right context, constraints, and tools,
-- and governance remains visible and enforceable throughout delivery.
+This document builds on those ideas by looking at the SDLC itself and asking how agents, skills, plugins, and repository guidance can support each phase in concrete ways.
 
 ## 1. Why Structured Agent Support Matters
 
@@ -459,203 +453,63 @@ Humans must still own:
 
 No matter how capable the agent becomes, production accountability should remain unmistakably human.
 
-## 4. Concrete Differences Between Claude Code and OpenAI Codex
+## 4. Tool Comparison in Context
 
-The two tool families overlap a great deal, but they are not identical in emphasis.
+The detailed comparison between `Claude Code` and `OpenAI Codex` is intentionally separated into `ai-tools-by-sdlc-phase.md`, and the situation-based selection guidance sits in `ai-workflow-decision-matrix.md`.
 
-### 4.1 Where Claude Code Stands Out
+Within the argument of this document, the main point is narrower. The important distinction is less about product branding and more about workflow shape:
 
-Based on the `/feature-dev` materials, `Claude Code` is especially strong when the team wants to package a development methodology into a clear guided workflow.
+- guided, workflow-oriented support for bounded tasks,
+- broader, tool-connected support across multiple SDLC phases,
+- and the quality of the guardrails that govern how either approach is used.
 
-Its strengths include:
-
-- explicit multi-phase feature development,
-- specialized agents with distinct roles,
-- structured pauses for human approval,
-- and a strong fit for medium-complexity, bounded feature work.
-
-This makes it particularly attractive for organizations that want to teach and enforce a disciplined engineering flow rather than rely on free-form prompting.
-
-### 4.2 Where OpenAI Codex Stands Out
-
-Based on the `OpenAI` guide, `Codex` is especially strong as a more general AI-native engineering collaborator across the full SDLC, especially where the agent can interact with real tools, instructions, tests, review workflows, and operational systems.
-
-Its strengths include:
-
-- end-to-end SDLC support rather than only implementation,
-- integration with real tool execution,
-- the ability to operate inside broader organizational workflows,
-- and support for repository-level instructions such as `AGENTS.md` to create repeatable behavior.
-
-This makes it well suited to organizations that want agents embedded not just in coding, but in planning, testing, reviewing, documenting, and operations.
-
-### 4.3 The More Important Point
-
-In practice, the most important distinction may not be `Claude Code` versus `OpenAI Codex`.
-
-The more important distinction is:
-
-- unstructured prompting versus structured workflow,
-- isolated generation versus tool-backed validation,
-- and individual usage habits versus team-level operating standards.
-
-An organization that gets those things right will probably do well with either family of tools. An organization that gets them wrong will produce inconsistent outcomes with both.
+Organizations that get those workflow choices right can benefit from multiple tool families. Organizations that get them wrong will struggle even with capable tools.
 
 ## 5. Organizational Implications
 
-If a team wants agents, skills, and plugins to genuinely improve the SDLC, then several organizational changes are required.
+If a team wants agents, skills, and plugins to genuinely improve the SDLC, several organizational changes follow directly from the phase-by-phase analysis above:
 
-### 5.1 Standardize How AI Is Used
+- standardize a small number of default workflows rather than leaving AI usage entirely to personal style,
+- teach junior and senior engineers differently, with more emphasis on judgment, review, and governed execution,
+- shift metrics away from raw output and toward validated outcomes,
+- and invest in repository hygiene so agents can work against clear conventions, commands, and ownership boundaries.
 
-Teams should not leave agent usage entirely to personal style. Some flexibility is fine, but core workflows should be standardized.
+These implications are expanded further in `ai-supported-engineering-adoption-roadmap.md`, which turns them into rollout guidance.
 
-Examples:
+## 6. Core Guardrails
 
-- a default feature workflow,
-- a default review workflow,
-- a default testing workflow,
-- a default doc-update workflow,
-- and a default incident-triage workflow.
+This document uses the SDLC lens to show where AI can help. The corresponding constraint is that AI support should operate within a small number of explicit guardrails:
 
-This prevents the situation where one engineer uses the tools carefully while another uses them casually and produces lower-integrity output.
+- key scope, design, merge, and release decisions remain human-approved,
+- generation and validation should be treated as distinct activities,
+- tasks should stay bounded enough to be reviewable,
+- quality gates should be runnable and meaningful,
+- and the workflow should preserve auditability of what was proposed, changed, tested, and approved.
 
-### 5.2 Teach Junior and Senior Engineers Differently
-
-Junior engineers need structured workflows that teach them how to explore, clarify, design, test, and review. Senior engineers need workflows that amplify judgment rather than replacing it.
-
-This means AI enablement should not just be tool training. It should also be engineering-method training.
-
-### 5.3 Shift Metrics Away from Raw Output
-
-If teams start measuring success mainly by how much code was generated or how quickly tickets moved, they will create the wrong incentives.
-
-Better measures include:
-
-- cycle time to validated change,
-- defect escape rate,
-- rollback rate,
-- architectural consistency,
-- review quality,
-- and documentation freshness.
-
-### 5.4 Invest in Repository Hygiene
-
-Agents perform much better when the repository is understandable.
-
-That means:
-
-- keeping architectural notes current,
-- documenting conventions,
-- exposing test commands clearly,
-- maintaining service ownership information,
-- and preserving useful examples of good implementations.
-
-This is not optional overhead. It is part of making the team genuinely AI-native.
-
-## 6. Recommended Guardrails
-
-If the aim is governance, consistency, and codebase integrity, then the following guardrails should be explicit.
-
-### 6.1 Require Human Approval at Key Checkpoints
-
-At minimum, humans should explicitly approve:
-
-- final scope,
-- major design choice,
-- production-risking implementation changes,
-- and merge or release readiness.
-
-### 6.2 Use Skills and Plugins to Encode Team Practice
-
-Do not rely only on memory or informal norms. Encode expectations into:
-
-- `AGENTS.md`,
-- `CLAUDE.md`,
-- plugins,
-- reusable skills,
-- and review checklists.
-
-### 6.3 Separate Generation from Validation
-
-The same agent session can support both, but the team should conceptually separate:
-
-- drafting,
-- testing,
-- review,
-- and final approval.
-
-This reduces self-confirming loops where the generator also implicitly declares itself correct.
-
-### 6.4 Keep Tasks Bounded
-
-The `Claude Code` `/feature-dev` guidance is right to stress medium-complexity, bounded tasks.
-
-Teams should avoid giving agents:
-
-- very vague objectives,
-- whole-system refactors in one pass,
-- hidden organizational assumptions,
-- or authority to make irreversible production decisions.
-
-### 6.5 Make Quality Gates Runnable
-
-If agents are going to help deliver software, then tests, linters, review checks, and release validations must be runnable and understandable.
-
-Quality gates should be:
-
-- automated where possible,
-- easy to invoke,
-- visible in repo instructions,
-- and meaningful enough to block low-quality output.
-
-### 6.6 Preserve Auditability
-
-Teams should be able to see:
-
-- what the agent was asked to do,
-- what decisions it proposed,
-- what changed,
-- what tests ran,
-- and who approved the result.
-
-This is especially important in regulated, safety-sensitive, or business-critical environments.
-
-### 6.7 Treat AI Review as Mandatory but Not Sufficient
-
-For non-trivial changes, AI review should be a standard first pass. But it should not replace human review where the consequences of error are meaningful.
-
-### 6.8 Prefer Subtraction Over Generated Sprawl
-
-Agents make it easy to add code. Teams must become more disciplined about deleting unnecessary code, rejecting gratuitous abstractions, and protecting the long-term readability of the repository.
+The detailed governance rationale for these controls is developed in `governing-ai-supported-engineering.md`, and the more operational rollout version appears in `ai-supported-engineering-adoption-roadmap.md`.
 
 ## 7. A Practical Target Operating Model
 
-Putting all of this together, a realistic target model for an engineering team might look like this:
+Taken together, the sections above point to a practical operating model:
 
-- Every meaningful feature starts with a structured discovery and planning flow.
-- Agents explore the codebase and surface ambiguities before implementation begins.
-- Skills and plugins encode the team's standard workflow for feature work, testing, review, and documentation.
-- The repository includes durable guidance files that define conventions, commands, patterns, and guardrails.
-- Agents implement bounded changes and run validation loops.
-- AI review happens before human review.
-- Human engineers remain accountable for design choice, merge approval, release approval, and production operation.
-- Post-release learning is documented and fed back into skills, instructions, and workflow improvements.
+- every meaningful feature starts with structured discovery, planning, and design,
+- agents explore, draft, and validate within defined boundaries,
+- skills and plugins encode repeatable team practice,
+- repository guidance makes conventions and commands explicit,
+- AI review happens before human review where appropriate,
+- and humans remain accountable for judgment, acceptance, release, and production integrity.
 
-This is the difference between "developers occasionally using AI" and an actual AI-supported SDLC.
+This is the difference between occasional AI use and a genuinely AI-supported SDLC.
 
 ## 8. Conclusion
 
 The most promising future is not one in which `Claude Code`, `OpenAI Codex`, or any other tool simply replaces engineers at each stage of the lifecycle.
 
-It is one in which the SDLC itself is redesigned so that:
+It is one in which the SDLC is redesigned so that:
 
-- agents do the repetitive first pass,
+- agents handle the repetitive first pass,
 - skills and plugins encode disciplined ways of working,
 - repository guidance makes local conventions visible,
 - and humans retain ownership of judgment, governance, and integrity.
 
-The practical implication is clear: if engineering teams want to benefit from AI without degrading their codebase, they need to invest not only in models, but in workflows.
-
-That means building a delivery system where exploration, clarification, design, implementation, testing, review, documentation, and operations are all supported by agents in deliberate ways, with human checkpoints and visible quality gates throughout.
-
-The organizations that do this well will probably not be the ones with the most autonomous agents. They will be the ones with the clearest workflows, the best encoded practices, and the strongest discipline around what remains unmistakably human.
+The comparison, decision, and adoption documents that follow build on this foundation by showing how different tool patterns fit the lifecycle, how teams can choose among them, and how an organization can adopt them safely.

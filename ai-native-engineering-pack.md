@@ -4,7 +4,9 @@
 
 This document curates the current set of notes into a coherent pack on how software engineering is changing in the age of AI, how teams should adapt, how to decide which agentic workflows to use across the software development lifecycle, and how to roll these practices out inside a real engineering organization.
 
-The documents now use publication-style filenames so the pack is easier to share and reference internally.
+`README.md` serves as the quick-start index for the repository. This document is the detailed pack guide for readers who want the full map, reading order, and rationale for how the documents fit together.
+
+The documents use publication-style filenames so the pack is easier to share and reference internally.
 
 Throughout the pack, `Claude Code` and `OpenAI Codex` are used as recurring reference examples. They are included not as the only relevant tools, but as representative examples of two important patterns in the current landscape: guided, workflow-oriented support for bounded engineering tasks, and broader, tool-connected support across multiple phases of the SDLC.
 
@@ -24,7 +26,7 @@ The pack is intended to be read as a progression:
 
 **Focus:** Why software engineering is changing in the age of AI
 
-This document synthesizes the first two articles in `hybrid-teams.md` and explains:
+This document synthesizes the first two articles in `source-notes.md` and explains:
 
 - how software development is shifting from manual code production toward verification, governance, and systems thinking,
 - how the role of the software engineer is changing,
@@ -62,7 +64,7 @@ Read this third if the goal is to understand how governance and AI support trans
 
 **Focus:** How the SDLC should be supported by agents, skills, and plugins
 
-This document builds on the first two documents and explains:
+This document builds on the first three documents and explains:
 
 - how agents can support each phase of the SDLC,
 - how skills and plugins can encode repeatable engineering practices,
@@ -127,7 +129,7 @@ Read:
 
 Then skim:
 
-5. `claude-code-vs-openai-codex-by-sdlc-phase.md`
+5. `ai-tools-by-sdlc-phase.md`
 6. `ai-workflow-decision-matrix.md`
 7. `ai-supported-engineering-adoption-roadmap.md`
 
@@ -146,7 +148,7 @@ Read:
 
 Then use:
 
-7. `claude-code-vs-openai-codex-by-sdlc-phase.md`
+7. `ai-tools-by-sdlc-phase.md`
 
 This path is best for readers who need to design team practices and choose working methods.
 
@@ -155,7 +157,7 @@ This path is best for readers who need to design team practices and choose worki
 Read:
 
 1. `ai-workflow-decision-matrix.md`
-2. `claude-code-vs-openai-codex-by-sdlc-phase.md`
+2. `ai-tools-by-sdlc-phase.md`
 
 Then go deeper with:
 

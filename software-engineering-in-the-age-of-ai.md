@@ -10,13 +10,13 @@ This document synthesizes two articles and a third supporting note:
 
 Taken together, the articles argue that software engineering is not disappearing, but its center of gravity is shifting. The value of engineers is moving away from manual code production and toward judgment, verification, architectural stewardship, and organizational design. At the same time, engineering teams need to redesign how they plan, build, test, review, document, and operate software so that AI can be used productively without undermining quality or ownership.
 
-## 1. Summary of Article 1: How the Role of the Software Engineer Is Changing
+## 1. How the Role of the Software Engineer Is Changing
 
-The `Built In` article argues that AI has dramatically reduced the cost of generating code, but it has not reduced the cost of ensuring that code is correct, safe, maintainable, and fit for production use.
+AI has demonstrated that it can dramatically reduce the cost of generating code, but it has not reduced the cost of ensuring that code is correct, safe, maintainable, and fit for production use.
 
-Its core claim is that software development is moving from an era of deterministic authoring to one of probabilistic engineering. In the old model, engineers produced code directly and its value was closely tied to the difficulty of creating it. In the new model, AI can generate large amounts of code quickly, but that code often lacks deep coherence, durable intent, and reliable guarantees. As a result, the scarce and valuable capability is no longer typing syntax but exercising judgment.
+The core claim is that software development is moving from an era of deterministic authoring to one of probabilistic engineering. In the old model, engineers produced code directly and its value was closely tied to the difficulty of creating it. In the new model, AI can generate large amounts of code quickly, but that code often lacks deep coherence, durable intent, and reliable guarantees. As a result, the scarce and valuable capability is no longer typing syntax but exercising judgment.
 
-The article highlights several major shifts:
+Several major shifts stand out:
 
 - Code generation is becoming cheap and abundant.
 - Verification is becoming more expensive and more important.
@@ -33,17 +33,17 @@ The article therefore reframes the engineer's role. Instead of being primarily a
 - protecting security and compliance boundaries,
 - and making accountable decisions about what should and should not enter production.
 
-An important extension to this idea comes from agent based approaches to AI-assisted engineering, which can be generalized here as agent-driven development. These approaches start from the observation that the failure mode of naive AI coding is not simply that the model makes mistakes. The deeper problem is that a weakly governed workflow often looks like `prompt -> AI -> code generation`, which may work for small experiments such as greenfield projects or proof-of-concepts, but breaks down as systems grow in complexity. In that model, the generator is probabilistic and the surrounding engineering process is too underdefined to reliably contain architecture drift, hidden assumptions, inconsistent patterns, review bottlenecks, and fragile systems that compile but are difficult to reason about.
+An important extension to this idea comes from agent-based approaches to AI-assisted engineering, which can be generalized here as agent-driven development. These approaches start from the observation that the failure mode of naive AI coding is not simply that the model makes mistakes. The deeper problem is that a weakly governed workflow often looks like `prompt -> AI -> code generation`, which may work for small experiments such as greenfield projects or proofs of concept, but breaks down as systems grow in complexity. In that model, the generator is probabilistic and the surrounding engineering process is too underdefined to reliably contain architecture drift, hidden assumptions, inconsistent patterns, review bottlenecks, and fragile systems that compile but are difficult to reason about.
 
-The agent-driven response is to treat the engineering process itself as the control system. The AI can remain probabilistic, but the delivery pipeline around it should become more deterministic. In practice, that means inserting explicit engineering protocols between intent and implementation: specification before generation, architectural rules before code production, validation and contracts after generation, and policy checks before acceptance. Rather than asking the model to improvise its way from request to finished code, the team defines the sequence, constraints, interfaces, and validation layers the model must work within - essentially establishing and maintaining a governance model to ensure deterministic outcomes. The new governance model may look something like this `requirements -> architecture & design -> specification & impact analysis-> ai code & test generation -> validation -> documentation -> deploymeent`
+The agent-driven response is to treat the engineering process itself as the control system. The AI can remain probabilistic, but the delivery pipeline around it should become more deterministic. In practice, that means inserting explicit engineering protocols between intent and implementation: specification before generation, architectural rules before code production, validation and contracts after generation, and policy checks before acceptance. Rather than asking the model to improvise its way from request to finished code, the team defines the sequence, constraints, interfaces, and validation layers the model must work within, essentially establishing and maintaining a governance model to ensure deterministic outcomes. A governance-oriented pipeline may look something like this: `requirements -> architecture -> impact analysis and design -> AI code and test generation -> validation -> documentation -> deployment`
 
-This idea strengthens claim that the engineer's role is shifting toward governance. If the scarce capability is no longer syntax production but predictable system delivery, then engineers increasingly create value by designing the protocols that govern generation. They define module boundaries, interfaces, dependencies, quality gates, tests, review expectations, and acceptance criteria so that outcomes become more legible and more reliable. In that model, agents act as implementation engines inside a constrained engineering system rather than as autonomous substitutes for engineering judgment.
+This idea strengthens the claim that the engineer's role is shifting toward governance. If the scarce capability is no longer syntax production but predictable system delivery, then engineers increasingly create value by designing the protocols that govern generation. They define module boundaries, interfaces, dependencies, quality gates, tests, review expectations, and acceptance criteria so that outcomes become more legible and more reliable. In that model, agents act as implementation engines inside a constrained engineering system rather than as autonomous substitutes for engineering judgment.
 
 Seen this way, the role of the software engineer changes in two related directions at once. First, the engineer becomes a reviewer and governor of probabilistic output. Second, the engineer becomes a designer of the deterministic process around that output. The more AI accelerates code production, the more important it becomes to govern specification, architecture, validation, and traceability as first-class engineering work.
 
 The article also suggests that junior-to-senior development pathways may be disrupted. If entry-level work is increasingly automated, organizations will need new ways to help engineers develop judgment, especially through exposure to failure analysis, debugging, and system repair rather than just raw implementation.
 
-## 2. Summary of Article 2: How Engineering Teams Should Adapt Their Ways of Working
+## 2. How Engineering Teams Should Adapt Their Ways of Working
 
 The `OpenAI` article takes a more operational and organizational view. Rather than focusing mainly on the economic implications of AI-generated code, it walks through the software development lifecycle and explains how AI agents can support each phase.
 
@@ -85,15 +85,15 @@ Throughout, the article emphasizes a consistent pattern:
 - review AI output carefully,
 - retain human ownership of strategic, ambiguous, high-risk, and quality-critical decisions.
 
-The article presents the AI-native team not as a team with fewer engineers, but as a team whose workflows have been redesigned so engineers can spend less time on low-leverage translation work and more time on design, system reasoning, and governance.
+In summary, the AI-native team is not seen as a team with fewer engineers, but as a team whose workflows have been redesigned so engineers can spend less time on low-leverage translation work and more time on design, system reasoning, and governance.
 
 ## 3. Comparison of the Two Articles
 
-The two articles are highly complementary, but they operate at different levels.
+The previous two sections are highly complementary, but they operate at different levels.
 
 ### Shared themes
 
-Both articles agree on several core points:
+Both sections agree on several core points:
 
 - AI changes the role of software engineers but does not eliminate it.
 - The bottleneck is shifting from code generation to code verification, judgment, and coordination.
@@ -101,18 +101,18 @@ Both articles agree on several core points:
 - Teams must adapt their workflows rather than simply bolt AI onto existing practices.
 - The greatest risks come from using AI outputs uncritically or overestimating what generated code actually guarantees.
 
-Both articles also reject the simplistic idea that more generated code automatically means more productivity. They argue that the real challenge is making sure faster output does not create slower, riskier systems.
+Both sections also reject the simplistic idea that more generated code automatically means more productivity. They argue that the real challenge is making sure faster output does not create slower, riskier systems.
 
 ### Differences in emphasis
 
-The `Built In` article is more cautionary and conceptual. It focuses on how the economics of software work are changing and why the value of engineers is moving toward governance, verification, and subtraction. It stresses risk, fragility, liability, and the need for strong human judgment.
+Section 1 as presented is more cautionary and conceptual. It focuses on how the economics of software work are changing and why the value of engineers is moving toward governance, verification, and subtraction. It stresses risk, fragility, liability, and the need for strong human judgment.
 
-The `OpenAI` article is more practical and organizational. It focuses on how teams can redesign work across the SDLC so that AI contributes meaningfully. It provides a model for deciding what to delegate, what to review, and what humans must continue to own.
+Section 2 is more practical and organizational. It focuses on how teams can redesign work across the SDLC so that AI contributes meaningfully. It provides a model for deciding what to delegate, what to review, and what humans must continue to own.
 
 Put simply:
 
-- Article 1 explains why the engineering role is changing.
-- Article 2 explains how engineering teams should respond.
+- Section 1 explains why the engineering role is changing.
+- Section 2 explains how engineering teams should respond.
 
 ### Tension between the two perspectives
 
@@ -224,7 +224,7 @@ This implies fewer reviews focused on style trivia and more reviews focused on c
 
 ### 4.7 Prioritize subtraction and simplification
 
-One of the strongest points in the `Built In` article is that when addition becomes cheap, subtraction becomes more valuable.
+One of the strongest points made in Section 1 is that when addition becomes cheap, subtraction becomes more valuable.
 
 Teams should become more deliberate about:
 

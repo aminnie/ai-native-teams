@@ -23,7 +23,7 @@ https://github.com/philspil66/Protocol-Driven-Development-PDD/tree/main
 - `governing-ai-supported-engineering.md`
 - `ai-team-role-changes.md`
 - `supporting-the-sdlc-with-agents-skills-and-plugins.md`
-- `claude-code-vs-openai-codex-by-sdlc-phase.md`
+- `ai-tools-by-sdlc-phase.md`
 - `ai-workflow-decision-matrix.md`
 - `ai-supported-engineering-adoption-roadmap.md`
 

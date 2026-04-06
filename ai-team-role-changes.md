@@ -8,7 +8,11 @@ It addresses a practical organizational question that naturally follows the gove
 
 If a team continues to work as a Scrum Team, how do role expectations change when AI becomes part of planning, design, implementation, testing, review, release, and operations?
 
-The central argument is that Scrum does not disappear. The need for shared accountability, cross-functional collaboration, clear increments, and regular inspection and adaptation remains. What changes is the nature of the work performed inside each role:
+The central argument is that Scrum does not disappear. The need for shared accountability, cross-functional collaboration, clear increments, and regular inspection and adaptation remains. What changes is the nature of the work performed inside each role.
+
+The governance properties discussed in the previous document now become concrete at the team level. Consistency, reproducibility, traceability, auditability, and clear human accountability show up not only in process design, but also in who owns which decisions, who reviews which artifacts, and what each role is expected to produce.
+
+In that context, several broad shifts become visible:
 
 - more work shifts from first-pass production to oversight and refinement,
 - more effort moves toward judgment, orchestration, and quality control,
@@ -80,7 +84,7 @@ AI can assist specialized roles, but it does not remove collective ownership of 
 
 ## 3. Role-by-Role Changes
 
-## 3.1 Product Owner or Product Manager
+### 3.1 Product Owner or Product Manager
 
 ### Primary shift
 
@@ -132,7 +136,7 @@ AI can help product roles by:
 
 The role becomes less about producing more tickets and more about producing clearer, more decision-ready work for the team and for the AI-supported workflow.
 
-## 3.2 Software Engineer
+### 3.2 Software Engineer
 
 ### Primary shift
 
@@ -188,7 +192,7 @@ AI can help software engineers by:
 
 The engineer becomes less of a syntax producer and more of a system steward, implementation reviewer, and workflow orchestrator.
 
-## 3.3 Quality Engineer, Automation
+### 3.3 Quality Engineer, Automation
 
 ### Primary shift
 
@@ -240,7 +244,7 @@ AI can help automation engineers by:
 
 The role becomes more strategic and architectural. The automation engineer increasingly acts as a test systems designer and evidence quality owner.
 
-## 3.4 Quality Engineer, Manual
+### 3.4 Quality Engineer, Manual
 
 ### Primary shift
 
@@ -285,7 +289,7 @@ AI can help manual quality engineers by:
 
 The manual quality role becomes less execution-heavy and more insight-heavy. It is increasingly centered on judgment, customer experience, and risk interpretation.
 
-## 3.5 DevSecOps
+### 3.5 DevSecOps
 
 ### Primary shift
 
@@ -333,7 +337,7 @@ AI can help DevSecOps roles by:
 
 DevSecOps becomes more central, not less. The role increasingly governs the trustworthiness of the delivery system that both humans and AI rely on.
 
-## 3.6 Engineering Manager
+### 3.6 Engineering Manager
 
 ### Primary shift
 
@@ -382,18 +386,9 @@ AI can help engineering managers by:
 
 The Engineering Manager becomes less of a throughput tracker and more of a designer and steward of the team’s human-AI operating model.
 
-## 4. Summary Table
+## 4. Role Comparison at a Glance
 
-
-| Role                             | Main shift                                                                                          | AI assists best with                                                                     | Human ownership remains strongest in                                              |
-| -------------------------------- | --------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| Product Owner or Product Manager | From handoff-oriented requirement writing to sharper definition of intent, constraints, and success | Story drafting, ambiguity detection, prototypes, dependency surfacing, release summaries | Prioritization, value decisions, stakeholder alignment, final acceptance          |
-| Software Engineer                | From first-pass coding toward architecture, orchestration, review, and verification                 | Code exploration, implementation drafts, refactors, tests, review summaries              | Design judgment, merge readiness, complexity control, ownership of technical risk |
-| Quality Engineer, Automation     | From heavy test authoring toward test strategy and evidence quality                                 | Test generation, edge-case suggestions, maintenance of test assets, failure explanation  | Coverage decisions, test architecture, reliability of evidence                    |
-| Quality Engineer, Manual         | From repetitive scripted execution toward exploratory testing and experience validation             | Test ideas, documentation of sessions, structured defect capture, risk summaries         | UX judgment, ambiguity detection, nuanced defect interpretation                   |
-| DevSecOps                        | From pipeline maintenance toward policy-driven, secure, observable delivery enablement              | Alert triage, pipeline failure analysis, incident correlation, control suggestions       | Security policy, production approval, incident command, high-risk interpretation  |
-| Engineering Manager              | From throughput oversight toward human-AI operating-model stewardship                               | Pattern summaries, bottleneck analysis, guideline drafting, retrospective synthesis      | Team design, coaching, accountability, risk escalation, cultural direction        |
-
+Appendix A provides the compact comparison tables for readers who want a side-by-side summary of current expectations, AI-supported future expectations, human-owned decisions, strengthened artifacts, and best-fit AI assistance by role.
 
 ## 5. Implications for Scrum Artifacts and Events
 

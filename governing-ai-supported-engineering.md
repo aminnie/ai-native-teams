@@ -243,7 +243,7 @@ Someone still needs to own:
 
 This means the right mental model is not "replace process with automation." It is "use AI to make process more explicit, more consistent, and more inspectable while keeping human accountability clear."
 
-## 10. Implications for the Next Document
+## 10. Implications for the Next Documents
 
 Once the above questions are visible, the move to agents, skills, and plugins becomes much more natural.
 
@@ -254,7 +254,9 @@ At that point, tools can be evaluated in a more disciplined way:
 - Plugins become one way to package and distribute structured methods.
 - Repository guidance becomes one way to make expectations durable and local to the codebase.
 
-In other words, the next document should not be read as saying, "Use agents, skills, and plugins because they exist."
+In practice, the sequence now becomes clearer. The role document should show how these governance properties reshape a Scrum team's responsibilities and deliverables. The SDLC support document should then show how agents, skills, plugins, and repository guidance become practical mechanisms for implementing those governance goals.
+
+In other words, the next documents should not be read as saying, "Use agents, skills, and plugins because they exist."
 
 It should be read as saying:
 
@@ -275,4 +277,4 @@ It shifts the conversation:
 - from individual prompting habits to shared engineering practice,
 - and from output generation to verifiable delivery.
 
-This is the rationale for the next document in the series.
+This is the rationale for the next two documents in the series.

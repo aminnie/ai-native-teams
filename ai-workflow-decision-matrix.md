@@ -2,9 +2,11 @@
 
 ## Purpose
 
-This note complements `software-engineering-in-the-age-of-ai.md`, `governing-ai-supported-engineering.md`, `supporting-the-sdlc-with-agents-skills-and-plugins.md`, and `claude-code-vs-openai-codex-by-sdlc-phase.md`.
+This note complements `software-engineering-in-the-age-of-ai.md`, `governing-ai-supported-engineering.md`, `ai-team-role-changes.md`, `supporting-the-sdlc-with-agents-skills-and-plugins.md`, and `ai-tools-by-sdlc-phase.md`.
 
 Its purpose is practical: to help an engineering team decide when to prefer a `Claude Code`-style workflow, when to prefer an `OpenAI Codex`-style workflow, and when neither should be given much autonomy.
+
+For a phase-by-phase comparison of the two tool families, see `ai-tools-by-sdlc-phase.md`. This document is intended to be situation-first rather than phase-first.
 
 This is not intended as a definitive product judgment. It is a decision aid based on the current strengths described in the source material and on broader agentic engineering practice.
 
