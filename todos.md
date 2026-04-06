@@ -5,4 +5,4 @@ On references: you do not need more references to support this bridge document a
 - software governance in regulated environments
 - traceability and auditability standards
 - organizational design or socio-technical systems research
- -empirical studies on AI-assisted engineering quality and process outcomes
+- empirical studies on AI-assisted engineering quality and process outcomes

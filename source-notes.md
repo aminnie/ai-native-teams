@@ -18,7 +18,6 @@ https://github.com/philspil66/Protocol-Driven-Development-PDD/tree/main
 ## Generated Documents
 
 - `README.md`
-- `ai-native-engineering-pack.md`
 - `software-engineering-in-the-age-of-ai.md`
 - `governing-ai-supported-engineering.md`
 - `ai-team-role-changes.md`
