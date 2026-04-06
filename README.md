@@ -4,17 +4,13 @@
 
 This document curates the current set of notes into a coherent pack on how software engineering is changing in the age of AI, how teams should adapt, how to decide which agentic workflows to use across the software development lifecycle, and how to roll these practices out inside a real engineering organization.
 
-The documents now use publication-style filenames so the pack is easier to share and reference internally.
-
-Throughout the pack, `Claude Code` and `OpenAI Codex` are used as recurring reference examples. They are included not as the only relevant tools, but as representative examples of two important patterns in the current landscape: guided, workflow-oriented support for bounded engineering tasks, and broader, tool-connected support across multiple phases of the SDLC.
-
 The pack is intended to be read as a progression:
 
 1. understand why the role of software engineering is changing,
 2. ask how AI should improve governance, consistency, traceability, and accountability across the lifecycle,
 3. understand how Scrum team roles, responsibilities, and deliverables change in an AI-supported environment,
 4. understand how the SDLC should be supported by agents, skills, and plugins,
-5. compare `Claude Code` and `OpenAI Codex` by lifecycle phase,
+5. compare popular agentic AI coding tools by lifecycle phase,
 6. use a practical decision matrix to choose the right workflow for a given situation,
 7. and turn the ideas into an adoption roadmap for a real team or organization.
 
@@ -71,9 +67,11 @@ This document builds on the first two documents and explains:
 
 Read this fourth if the goal is to move from role and governance principles to concrete SDLC support mechanisms.
 
-### `claude-code-vs-openai-codex-by-sdlc-phase.md`
+### `ai-tools-by-sdlc-phase.md`
 
 **Focus:** Comparison of `Claude Code` vs `OpenAI Codex` by SDLC phase
+
+Throughout the document pack, `Claude Code` and `OpenAI Codex` are used as recurring reference examples. They are included not as the only relevant agentic ai tools, but as representative examples of two important patterns in the current landscape: guided, workflow-oriented support for bounded engineering tasks, and broader, tool-connected support across multiple phases of the SDLC.
 
 This document provides:
 

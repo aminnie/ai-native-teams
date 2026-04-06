@@ -71,7 +71,7 @@ This document builds on the first two documents and explains:
 
 Read this fourth if the goal is to move from role and governance principles to concrete SDLC support mechanisms.
 
-### `claude-code-vs-openai-codex-by-sdlc-phase.md`
+### `ai-tools-by-sdlc-phase.md`
 
 **Focus:** Comparison of `Claude Code` vs `OpenAI Codex` by SDLC phase
 
