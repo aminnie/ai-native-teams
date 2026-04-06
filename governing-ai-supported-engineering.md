@@ -10,7 +10,7 @@ How should AI be used to strengthen the way engineering work is governed, coordi
 
 That framing matters because AI is not only a coding aid. It is also a force multiplier on process. Used well, it can make engineering more disciplined, transparent, and consistent. Used badly, it can accelerate ambiguity, inconsistency, and hidden risk.
 
-The central argument of this document is that the first question is not "Which agent should we use?" The first question is "What properties do we want our engineering system to have in an AI-enabled environment?"
+The central argument of this document is that the first question is not "Which IDE, CLI, or agent(s) should we use?" The first question is "What properties do we want our engineering system to have in an AI-enabled environment?"
 
 ## 1. Why This Question Comes Before Tools
 
@@ -29,7 +29,7 @@ That is why this bridging question matters. It reframes AI from being mainly an 
 
 ## 2. The Real Need: Better Engineering System Properties
 
-Before discussing agents, skills, and plugins, it is helpful to define the qualities that a strong AI-supported SDLC should exhibit.
+Before discussing AI tools, and concepts such as agentic AI rules, agents, skills, and plugins, it is helpful to define the qualities that a strong AI-supported SDLC should exhibit.
 
 At a minimum, an engineering organization should want more of the following:
 
@@ -54,7 +54,7 @@ These properties are valuable whether or not a given team uses `Claude Code`, `O
 
 ## 3. Governance Across the Engineering Lifecycle
 
-When teams hear "AI in software engineering," they often think first about code generation. But governance is much broader than code writing. It applies across planning, design, build, test, review, release, and operations.
+When teams hear "AI in software engineering," they often think first about code generation. But governance is much broader than code writing. It applies across planning, requirements, design, build, test, review, release, and operations.
 
 In this context, governance means:
 
@@ -77,7 +77,7 @@ This is important because AI does not only create output. It can also enforce se
 
 That means the question is not merely, "Can AI help us write code?" It is also:
 
-- Can AI help ensure that planning happened before implementation?
+- Can AI help ensure that requirements and planning happened before implementation?
 - Can AI help ensure that design trade-offs were surfaced?
 - Can AI help ensure that required tests were considered?
 - Can AI help ensure that review was meaningful rather than ceremonial?
@@ -245,7 +245,7 @@ This means the right mental model is not "replace process with automation." It i
 
 ## 10. Implications for the Next Documents
 
-Once the above questions are visible, the move to agents, skills, and plugins becomes much more natural.
+Once the above questions are visible, the move to AI agents, skills, and plugins as process guidance mechanisms becomes much more natural.
 
 At that point, tools can be evaluated in a more disciplined way:
 
@@ -254,9 +254,9 @@ At that point, tools can be evaluated in a more disciplined way:
 - Plugins become one way to package and distribute structured methods.
 - Repository guidance becomes one way to make expectations durable and local to the codebase.
 
-In practice, the sequence now becomes clearer. The role document should show how these governance properties reshape a Scrum team's responsibilities and deliverables. The SDLC support document should then show how agents, skills, plugins, and repository guidance become practical mechanisms for implementing those governance goals.
+In practice, the sequence now becomes clearer. The role document should show how these governance properties reshape a Scrum team's responsibilities and deliverables. The SDLC support document should then show how AI agents, skills, plugins, and repository guidance become practical mechanisms for implementing those governance goals.
 
-In other words, the next documents should not be read as saying, "Use agents, skills, and plugins because they exist."
+In other words, the next documents should not be read as saying, "Use AI agents, skills, and plugins because they exist."
 
 It should be read as saying:
 
@@ -264,7 +264,7 @@ If we want better governance, consistency, reproducibility, traceability, audita
 
 ## 11. Conclusion
 
-The transition from "why software engineering is changing" to "how the SDLC should be supported by agents, skills, and plugins" is stronger if it passes through one intermediate question:
+The transition from "why software engineering is changing" to "how the SDLC should be supported by AI agents, skills, and plugins" is stronger if it passes through one intermediate question:
 
 What do we need AI to do for the quality of our engineering system, not just for the speed of our engineering output?
 

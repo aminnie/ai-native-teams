@@ -6,7 +6,7 @@ This document sits between `governing-ai-supported-engineering.md` and `supporti
 
 It addresses a practical organizational question that naturally follows the governance discussion:
 
-If a team continues to work as a Scrum Team, how do role expectations change when AI becomes part of planning, design, implementation, testing, review, release, and operations?
+Scrum is a widely used practice in software engineering. If a team continues to work as a Scrum Team, how do role expectations change when AI becomes part of planning, design, implementation, testing, review, release, and operations?
 
 The central argument is that Scrum does not disappear. The need for shared accountability, cross-functional collaboration, clear increments, and regular inspection and adaptation remains. What changes is the nature of the work performed inside each role.
 
@@ -119,6 +119,7 @@ AI can help product roles by:
 
 - summarizing customer or issue data,
 - drafting first-pass stories and acceptance criteria,
+- drafting epics and creating supporting user stories,
 - identifying likely codebase dependencies or impacted systems,
 - generating prototype flows,
 - surfacing ambiguities before sprint planning,
@@ -157,7 +158,8 @@ The engineer still builds software, but the highest-value work increasingly lies
 - reviewing AI-generated code critically,
 - checking for architectural consistency and long-term maintainability,
 - strengthening tests and validation logic,
-- and preventing low-value generated complexity from entering the codebase.
+- preventing low-value generated complexity from entering the codebase,
+- and the development an maintances of AI governance artifacts.
 
 ### Responsibilities that remain strongly human
 
@@ -226,6 +228,7 @@ As AI makes it easier to generate test scripts, the value of the role moves towa
 
 AI can help automation engineers by:
 
+- generating and maintaining test speciications,
 - generating first-pass tests,
 - proposing edge cases,
 - updating tests after implementation changes,
@@ -257,7 +260,7 @@ As AI and automation take more of the routine execution workload, the distinct v
 - exploratory testing,
 - validation of user journeys and edge cases,
 - detection of workflow ambiguity,
-- assessment of usability and experiential quality,
+- assessment of usability and experiential quality and compliance,
 - interpretation of inconsistent or suspicious test results,
 - and helping the team understand where automation is insufficient.
 
@@ -521,3 +524,5 @@ The following tables summarize the role shifts in a more compact form.
 | Quality Engineer, Manual         | exploratory session support, test idea generation, observation structuring, defect summarization, risk pattern surfacing      |
 | DevSecOps                        | alert triage, pipeline failure summarization, incident correlation, first-pass remediation suggestions, control gap detection |
 | Engineering Manager              | trend summaries, workflow bottleneck analysis, retrospective synthesis, policy drafting, cross-team pattern detection         |
+
+

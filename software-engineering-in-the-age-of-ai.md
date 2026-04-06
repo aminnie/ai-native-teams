@@ -53,7 +53,7 @@ The article organizes this around the major phases of software delivery:
 
 ### Planning
 
-AI can help analyze specifications, identify dependencies, surface ambiguities, and support scoping. Teams spend less time manually gathering context and more time making decisions.
+AI can help analyze and refine specifications, identify dependencies, surface ambiguities, and support scoping. Teams spend less time manually gathering context and more time making decisions.
 
 ### Design
 
@@ -165,6 +165,8 @@ As AI handles more of the mechanical work, human engineers should spend proporti
 - threat modeling and security,
 - test strategy,
 - reviewing system-wide impacts,
+- system performance,
+- accessibility compliance,
 - and simplifying designs.
 
 This is a shift from "how do I write this function?" toward "what is the right system behavior, and how do we know it is safe and durable?"
@@ -194,6 +196,7 @@ For example, AI may be suitable for:
 - internal tooling,
 - test generation,
 - codebase summarization,
+- documentation maintanence,
 - routine refactors,
 - and first-pass implementation of well-specified changes.
 
