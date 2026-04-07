@@ -35,7 +35,7 @@ This document proposed to explain:
 
 Read this first if the goal is to understand the broader change in engineering work.
 
-### `governing-ai-supported-engineering.md`
+### `governing-ai-native-engineering.md`
 
 **Focus:** Why AI should first be framed as a governance and operating-model question
 
@@ -61,7 +61,7 @@ This document bridges governance principles and workflow design by explaining:
 
 Read this third if the goal is to understand how governance and AI support translate into concrete changes in team roles and day-to-day work.
 
-### `managing-an-ai-native-sdlc.md`
+### `managing-ai-native-sdlc.md`
 
 **Focus:** How the SDLC should be supported by agents, skills, and plugins
 
@@ -101,7 +101,7 @@ This document provides:
 
 Read this sixth if the goal is practical decision-making.
 
-### `ai-supported-engineering-adoption-roadmap.md`
+### `ai-native-engineering-adoption-roadmap.md`
 
 **Focus:** How to introduce AI-supported engineering practices in a real organization
 
@@ -124,15 +124,15 @@ Read this seventh if the goal is organizational execution rather than analysis a
 Read:
 
 1. `software-engineering-in-the-age-of-ai.md`
-2. `governing-ai-supported-engineering.md`
+2. `governing-ai-native-engineering.md`
 3. `ai-team-role-changes.md`
-4. `managing-an-ai-native-sdlc.md`
+4. `managing-ai-native-sdlc.md`
 
 Then skim:
 
 5. `ai-tools-by-sdlc-phase.md`
 6. `ai-workflow-decision-matrix.md`
-7. `ai-supported-engineering-adoption-roadmap.md`
+7. `ai-native-engineering-adoption-roadmap.md`
 
 This path is best for readers who want the big picture first and practical selection guidance second.
 
@@ -141,11 +141,11 @@ This path is best for readers who want the big picture first and practical selec
 Read:
 
 1. `software-engineering-in-the-age-of-ai.md`
-2. `governing-ai-supported-engineering.md`
+2. `governing-ai-native-engineering.md`
 3. `ai-team-role-changes.md`
-4. `managing-an-ai-native-sdlc.md`
+4. `managing-ai-native-sdlc.md`
 5. `ai-workflow-decision-matrix.md`
-6. `ai-supported-engineering-adoption-roadmap.md`
+6. `ai-native-engineering-adoption-roadmap.md`
 
 Then use:
 
@@ -162,11 +162,11 @@ Read:
 
 Then go deeper with:
 
-3. `governing-ai-supported-engineering.md`
+3. `governing-ai-native-engineering.md`
 4. `ai-team-role-changes.md`
-5. `managing-an-ai-native-sdlc.md`
+5. `managing-ai-native-sdlc.md`
 6. `software-engineering-in-the-age-of-ai.md`
-7. `ai-supported-engineering-adoption-roadmap.md`
+7. `ai-native-engineering-adoption-roadmap.md`
 
 This path is best for readers who first want to know what to do in concrete day-to-day situations.
 

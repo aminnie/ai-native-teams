@@ -1,22 +1,34 @@
-# Supporting the SDLC with Agents, Skills, and Plugins
+# Managing an AI-Native SDLC
 
 ## Overview
 
-This document assumes the reader has already read `software-engineering-in-the-age-of-ai.md`, `governing-ai-supported-engineering.md`, and `ai-team-role-changes.md` and accepts the central premise: software engineering is changing, teams need to adapt, and human accountability remains essential even as AI takes on more of the mechanical work.
+This document assumes the reader has already read `software-engineering-in-the-age-of-ai.md`, `governing-ai-native-engineering.md`, and `ai-team-role-changes.md` and accepts the central premise: software engineering is changing, teams need to adapt, and human accountability remains essential even as AI takes on more of the mechanical work.
 
-The question now is more practical: how should the software development lifecycle be supported by agents, skills, and plugins so that a team can improve speed without losing governance, consistency, code quality, or architectural integrity?
+### **Deterministic Control Over Non-Deterministic AI**
 
-This document focuses on that question. It follows the governance framing introduced in `governing-ai-supported-engineering.md`, builds on the role implications outlined in `ai-team-role-changes.md`, and uses the earlier `OpenAI` article on AI-native engineering teams and the additional point 3 links in `source-notes.md`, especially the `Claude Code` `/feature-dev` workflow, to outline how tools such as `Claude Code` and `OpenAI Codex` can support the SDLC in concrete ways.
+Traditional software engineering uses deterministic coding techniques that follow strict, predefined rules, producing identical outputs from given inputs. AI coding agents are based on LLMs, are probabilistic and operate on statistical likelihoods, adapting to new data, but producing varied, non-guaranteed outcomes. This distinction between deterministic coding and probabilistic agents represents a fundamental shift from traditional software development to autonomous AI systems.   
+  
+Conus Greyling ([Kore.ai](http://Kore.ai)):  
+  
+"AI agents are largely probabilistic...   
+They interpret, improvise and sometimes surprise you…  
+That is what makes them useful. But It is also what makes them dangerous in production.
 
-It also adds analysis of where these tools are genuinely useful, where they are risky, and what operating guardrails are needed so that junior and senior engineers alike work in a consistent, reviewable, and trustworthy way.
+> The core tension in agentic AI is this… you want the model to be creative and autonomous, but you also want guarantees."
 
-Before discussing them in detail, it helps to clarify what these mechanisms are. Note:  In this document,`agents` are not to be confused with active AI workers that can explore, propose, implement, test, review, or summarize within bounded workflows.  
+A more practical question: How should the software development lifecycle be adopted to provide such quarantees and yet continue to remain creative without losing speed, governance, consistency, code quality, or architectural integrity?
 
-- ++**[AGENTS.md++](https://www.google.com/search?q=AGENTS.md&sca_esv=3c4c5acec5573df9&biw=1552&bih=847&sxsrf=ANbL-n7LtDnk_YJP9GtoRLf3Xe6hKSm3IA%3A1775450862736&ei=7jrTacLQLJeFp84P7Y344AY&ved=2ahUKEwjU9-6cttiTAxXLNt4AHbtEHeMQgK4QegQIAxAB&uact=5&oq=explaion+the+difference+between+AI+agents+%28.md%29%2C+skills+and+plug-ins&gs_lp=Egxnd3Mtd2l6LXNlcnAiRGV4cGxhaW9uIHRoZSBkaWZmZXJlbmNlIGJldHdlZW4gQUkgYWdlbnRzICgubWQpLCBza2lsbHMgYW5kIHBsdWctaW5zSLPEAlAAWOi4AnALeACQAQCYAboBoAHYO6oBBTU0LjI3uAEDyAEA-AEBmAJSoAKiOKgCCsICERAuGIAEGJECGNEDGMcBGIoFwgILEAAYgAQYkQIYigXCAhEQLhiABBixAxjRAxiDARjHAcICCxAuGIAEGLEDGIMBwgILEAAYgAQYsQMYgwHCAg4QLhiABBixAxiDARiKBcICERAAGIAEGLEDGIMBGMcDGIoFwgILEC4YgAQY0QMYxwHCAiAQLhiABBiRAhjRAxjHARiKBRiXBRjcBBjeBBjgBNgBAcICBRAAGIAEwgIIEC4YgAQYsQPCAg4QABiABBixAxiDARiKBcICChAuGIAEGEMYigXCAgUQLhiABMICFxAAGIAEGJECGLQCGOcGGIoFGOoC2AECwgIQEC4YAxi0AhjqAhiPAdgBAsICEBAAGAMYtAIY6gIYjwHYAQLCAg4QLhiABBixAxjRAxjHAcICChAAGIAEGEMYigXCAg0QABiABBixAxhDGIoFwgIWEC4YgAQYsQMY0QMYQxiDARjHARiKBcICDRAAGIAEGEMYyQMYigXCAgsQABiABBiSAxiKBcICERAuGIAEGLEDGMcBGI4FGK8BwgILEAAYgAQYsQMYyQPCAggQABiABBiSA8ICIBAuGIAEGLEDGMcBGI4FGK8BGJcFGNwEGN4EGOAE2AEBwgIOEC4YgAQYxwEYjgUYrwHCAh0QLhiABBjHARiOBRivARiXBRjcBBjeBBjgBNgBAcICCBAAGIAEGLEDwgIHEAAYgAQYCsICDBAAGIAEGLEDGAoYC8ICEBAAGIAEGLEDGIMBGIoFGArCAgkQABiABBgKGAvCAgcQABiABBgNwgIQEAAYgAQYsQMYgwEYigUYDcICBhAAGAMYDcICBhAAGA0YHsICBhAAGBYYHsICBRAAGO8FwgIIEAAYCBgNGB7CAgsQABiABBiGAxiKBcICCBAAGIAEGKIEwgIHECEYoAEYCsICBRAhGKsCwgIFECEYnwWYAwTxBTLibdVWw5W0ugYGCAEQARgUugYECAIYB5IHBTQ4LjM0oAeo9AWyBwUzNy4zNLgHgDjCBwc3LjM5LjM2yAfkAYAIAA&sclient=gws-wiz-serp&mstk=AUtExfDjTbJm7uRxuYk6SC4crb1KG9f-U5CZjmxetW-XQTI9rDItcOtpI6yApAfBRxbjDxuEG7IxCG49vB4FG2oTUZ5gZzhDTBL1H8YBkbn8sMaDC6sprgCTxv6ZzfgQjO58teyC6SvFNTjfgRdw-Qh4bIOvqhw2-NdhcdqUs81cTBZzmJlQUSzv1mGfVnz0z1qd8lRW&csui=3) (Static Context/Rules):** Is a markdown file in the project root that defines enduring rules for the AI. It is always loaded into the agent's context, providing consistent behavior across tasks.
-- ++**[Skills++](https://www.google.com/search?q=Skills&sca_esv=3c4c5acec5573df9&biw=1552&bih=847&sxsrf=ANbL-n7LtDnk_YJP9GtoRLf3Xe6hKSm3IA%3A1775450862736&ei=7jrTacLQLJeFp84P7Y344AY&ved=2ahUKEwjU9-6cttiTAxXLNt4AHbtEHeMQgK4QegQIAxAD&uact=5&oq=explaion+the+difference+between+AI+agents+%28.md%29%2C+skills+and+plug-ins&gs_lp=Egxnd3Mtd2l6LXNlcnAiRGV4cGxhaW9uIHRoZSBkaWZmZXJlbmNlIGJldHdlZW4gQUkgYWdlbnRzICgubWQpLCBza2lsbHMgYW5kIHBsdWctaW5zSLPEAlAAWOi4AnALeACQAQCYAboBoAHYO6oBBTU0LjI3uAEDyAEA-AEBmAJSoAKiOKgCCsICERAuGIAEGJECGNEDGMcBGIoFwgILEAAYgAQYkQIYigXCAhEQLhiABBixAxjRAxiDARjHAcICCxAuGIAEGLEDGIMBwgILEAAYgAQYsQMYgwHCAg4QLhiABBixAxiDARiKBcICERAAGIAEGLEDGIMBGMcDGIoFwgILEC4YgAQY0QMYxwHCAiAQLhiABBiRAhjRAxjHARiKBRiXBRjcBBjeBBjgBNgBAcICBRAAGIAEwgIIEC4YgAQYsQPCAg4QABiABBixAxiDARiKBcICChAuGIAEGEMYigXCAgUQLhiABMICFxAAGIAEGJECGLQCGOcGGIoFGOoC2AECwgIQEC4YAxi0AhjqAhiPAdgBAsICEBAAGAMYtAIY6gIYjwHYAQLCAg4QLhiABBixAxjRAxjHAcICChAAGIAEGEMYigXCAg0QABiABBixAxhDGIoFwgIWEC4YgAQYsQMY0QMYQxiDARjHARiKBcICDRAAGIAEGEMYyQMYigXCAgsQABiABBiSAxiKBcICERAuGIAEGLEDGMcBGI4FGK8BwgILEAAYgAQYsQMYyQPCAggQABiABBiSA8ICIBAuGIAEGLEDGMcBGI4FGK8BGJcFGNwEGN4EGOAE2AEBwgIOEC4YgAQYxwEYjgUYrwHCAh0QLhiABBjHARiOBRivARiXBRjcBBjeBBjgBNgBAcICCBAAGIAEGLEDwgIHEAAYgAQYCsICDBAAGIAEGLEDGAoYC8ICEBAAGIAEGLEDGIMBGIoFGArCAgkQABiABBgKGAvCAgcQABiABBgNwgIQEAAYgAQYsQMYgwEYigUYDcICBhAAGAMYDcICBhAAGA0YHsICBhAAGBYYHsICBRAAGO8FwgIIEAAYCBgNGB7CAgsQABiABBiGAxiKBcICCBAAGIAEGKIEwgIHECEYoAEYCsICBRAhGKsCwgIFECEYnwWYAwTxBTLibdVWw5W0ugYGCAEQARgUugYECAIYB5IHBTQ4LjM0oAeo9AWyBwUzNy4zNLgHgDjCBwc3LjM5LjM2yAfkAYAIAA&sclient=gws-wiz-serp&mstk=AUtExfDjTbJm7uRxuYk6SC4crb1KG9f-U5CZjmxetW-XQTI9rDItcOtpI6yApAfBRxbjDxuEG7IxCG49vB4FG2oTUZ5gZzhDTBL1H8YBkbn8sMaDC6sprgCTxv6ZzfgQjO58teyC6SvFNTjfgRdw-Qh4bIOvqhw2-NdhcdqUs81cTBZzmJlQUSzv1mGfVnz0z1qd8lRW&csui=3) (On-demand Behavior):** Is a folder containing instructions (and sometimes reference documents and scripts) that the AI loads only when needed. They are used for specific, repeatable tasks like "run test suite" or "create Pull Request".
-- ++**[Plugins++](https://www.google.com/search?q=Plugins&sca_esv=3c4c5acec5573df9&biw=1552&bih=847&sxsrf=ANbL-n7LtDnk_YJP9GtoRLf3Xe6hKSm3IA%3A1775450862736&ei=7jrTacLQLJeFp84P7Y344AY&ved=2ahUKEwjU9-6cttiTAxXLNt4AHbtEHeMQgK4QegQIAxAF&uact=5&oq=explaion+the+difference+between+AI+agents+%28.md%29%2C+skills+and+plug-ins&gs_lp=Egxnd3Mtd2l6LXNlcnAiRGV4cGxhaW9uIHRoZSBkaWZmZXJlbmNlIGJldHdlZW4gQUkgYWdlbnRzICgubWQpLCBza2lsbHMgYW5kIHBsdWctaW5zSLPEAlAAWOi4AnALeACQAQCYAboBoAHYO6oBBTU0LjI3uAEDyAEA-AEBmAJSoAKiOKgCCsICERAuGIAEGJECGNEDGMcBGIoFwgILEAAYgAQYkQIYigXCAhEQLhiABBixAxjRAxiDARjHAcICCxAuGIAEGLEDGIMBwgILEAAYgAQYsQMYgwHCAg4QLhiABBixAxiDARiKBcICERAAGIAEGLEDGIMBGMcDGIoFwgILEC4YgAQY0QMYxwHCAiAQLhiABBiRAhjRAxjHARiKBRiXBRjcBBjeBBjgBNgBAcICBRAAGIAEwgIIEC4YgAQYsQPCAg4QABiABBixAxiDARiKBcICChAuGIAEGEMYigXCAgUQLhiABMICFxAAGIAEGJECGLQCGOcGGIoFGOoC2AECwgIQEC4YAxi0AhjqAhiPAdgBAsICEBAAGAMYtAIY6gIYjwHYAQLCAg4QLhiABBixAxjRAxjHAcICChAAGIAEGEMYigXCAg0QABiABBixAxhDGIoFwgIWEC4YgAQYsQMY0QMYQxiDARjHARiKBcICDRAAGIAEGEMYyQMYigXCAgsQABiABBiSAxiKBcICERAuGIAEGLEDGMcBGI4FGK8BwgILEAAYgAQYsQMYyQPCAggQABiABBiSA8ICIBAuGIAEGLEDGMcBGI4FGK8BGJcFGNwEGN4EGOAE2AEBwgIOEC4YgAQYxwEYjgUYrwHCAh0QLhiABBjHARiOBRivARiXBRjcBBjeBBjgBNgBAcICCBAAGIAEGLEDwgIHEAAYgAQYCsICDBAAGIAEGLEDGAoYC8ICEBAAGIAEGLEDGIMBGIoFGArCAgkQABiABBgKGAvCAgcQABiABBgNwgIQEAAYgAQYsQMYgwEYigUYDcICBhAAGAMYDcICBhAAGA0YHsICBhAAGBYYHsICBRAAGO8FwgIIEAAYCBgNGB7CAgsQABiABBiGAxiKBcICCBAAGIAEGKIEwgIHECEYoAEYCsICBRAhGKsCwgIFECEYnwWYAwTxBTLibdVWw5W0ugYGCAEQARgUugYECAIYB5IHBTQ4LjM0oAeo9AWyBwUzNy4zNLgHgDjCBwc3LjM5LjM2yAfkAYAIAA&sclient=gws-wiz-serp&mstk=AUtExfDjTbJm7uRxuYk6SC4crb1KG9f-U5CZjmxetW-XQTI9rDItcOtpI6yApAfBRxbjDxuEG7IxCG49vB4FG2oTUZ5gZzhDTBL1H8YBkbn8sMaDC6sprgCTxv6ZzfgQjO58teyC6SvFNTjfgRdw-Qh4bIOvqhw2-NdhcdqUs81cTBZzmJlQUSzv1mGfVnz0z1qd8lRW&csui=3) (Packaged Functionality):** Is a container that combines multiple skills, system prompts, and configuration settings (like MCP) into a single installable unit. They are designed to package entire workflows and make sharing them
+This document focuses on that question. It follows the governance framing introduced in `governing-ai-native-engineering.md`, builds on the role implications outlined in `ai-team-role-changes.md`, and uses the earlier `OpenAI` article on AI-native engineering teams and the additional point 3 links in `source-notes.md`, especially the `Claude Code` `/feature-dev` workflow, to outline how tools such as `Claude Code` and `OpenAI Codex` can support the SDLC in concrete ways.
 
-These mechanisms were introduced because ad hoc prompting and direct `prompt -> AI -> code` workflows do not scale well. At larger scale, those approaches create inconsistency, hidden assumptions, weak traceability, and uneven quality. Agents, skills, plugins, and persistent repository guidance help address those problems by making AI-assisted work more structured, repeatable, reviewable, and governable and available to all participating team members.
+AI coding agents such as Claude Code and Open Codex have introduced a provide a number of mechanisms intented to guide or even control AI agents towards determenistic outputs. These mechanisms were introduced because ad hoc prompting and direct `prompt -> AI -> code` vibe coding workflows do not scale well. At larger scale, those approaches create inconsistency, hidden assumptions, weak traceability, and uneven quality. These issues can often be attributed to the design of AI agent context windows. LLM calls are stateless, and as a result informaton such as the prompt, prompt history, documents referenced, etc passed into every LLM call. When the context starts exceeding design limits, the window is compacted (summarized) leading to what can be interpreted as 'memory loss'. Ad hoc LLM prompt instructions provided earlier such as "create/updete unit tests for every functional change" gets lost, and all of a sudden the test automation stops without the engineer noticing it.
+
+This is where agents, skills, plugins, hooks, and persistent repository guidance help to address this and make AI-assisted work more structured, repeatable, reviewable, and governable and available to not only a single vibe coder and his/her prompts, but all participating team members that is able to collectovely capitalize on artifacts stored in their code repos. Most signficant: Jnior and senior engineers alike now work in a consistent, reviewable, and trustworthy way. 
+
+Before discussing them in detail, it helps to clarify what these mechanisms are:
+- AGENTS.md (Static Context/Rules): Is a markdown file in the project root that defines enduring rules for the AI. It is always loaded into the agent's context, providing consistent behavior across tasks.
+- Skills (On-demand Behavior): Is a folder containing instructions (and sometimes reference documents and scripts) that the AI loads only when needed. They are used for specific, repeatable tasks like "run test suite" or "create Pull Request".
+- Plugins (Packaged Functionality): Is a container that combines multiple skills, system prompts, and configuration settings (like MCP) into a single installable unit. They are designed to package entire workflows and make sharing them
+- Hooks (Tool invocation permisioning, logging, auditability): AI agents invoke tools to accomplish work outside the realm of the LLM. For instance, an invoked bash terminal may be requested to delete a subdirectory or edit a .env file. Hooks are shell scripts that execute at fixed lifecycle points, evaluates the tool parameters againts code ruless. A hook may decide that the call is allowed, or block it with a reason. In the latter case, the LLM may re-evaluate its intentions and continue along a different path. "Hooks provide deterministic control wrapped around non-deterministic AI." (Cobus Greyling)
 
 ## Position in the Series
 
@@ -59,9 +71,9 @@ It should also be noted that agents, skills and plugins are supported by numerou
 
 ## 2. A Practical Model: What Each Tool Type Does
 
-Before looking phase by phase, it helps to distinguish three categories of support.
+Before looking phase by phase, it helps to distinguish three categories of support. 
 
-### 2.1 Agents (AGENTS.md)
+### 2.1 AGENTS.md
 
 `AGENTS.md` is an open standard Markdown file placed in the root of a software repository to provide specific, actionable instructions to AI coding agents and assistants. It functions as a kind of README for machines, bridging the gap between general AI knowledge and the specific requirements of a project, such as build commands, coding style, and testing rules.
 
@@ -107,8 +119,6 @@ Typical content in a skill definition:
 
 Skills are especially useful because they reduce the need for one large, overloaded prompt. Instead of repeatedly restating the same multi-step behavior, the team can encode it once and reuse it across projects and tools.
 
-
-
 Plugins operate at a broader level. A plugin can bundle multiple skills, prompts, workflow rules, and sometimes tool integrations into a more complete installable package. If a skill is a reusable recipe for a specific task, a plugin is closer to a packaged workflow system that makes a fuller method easy to install, invoke, and share.
 
 Examples:
@@ -119,7 +129,33 @@ Examples:
 
 The distinction from `AGENTS.md` is important. `AGENTS.md` provides persistent project-level rules and context. Skills define portable, task-specific actions that can be loaded when needed. Plugins package larger sets of behaviors and workflow support. Together, they reduce variation in how people use AI. Without them, every engineer invents a different prompting style and quality bar. With them, the team gets a more repeatable way of working.
 
-### 2.3 Repository Context and Guardrail Files
+### 2.3 Hooks
+
+Hooks are deterministic commands or scripts that execute at fixed lifecycle points in an AI agent workflow. The key idea is that hooks run outside the model and outside the conversation. They are not advisory prompt text. They are executable controls that fire at predictable moments before or after an agent uses a tool.
+
+This distinction matters because prompt-based safety is probabilistic. A model can usually follow instructions such as "do not edit protected files" or "ask before running risky commands," but that is still not the same as an enforced boundary. Hooks move that control from guidance into execution policy.
+
+In practical terms, hooks act as a permission and control layer around tool use. A hook can:
+
+- inspect a proposed tool call and its arguments,
+- allow the action,
+- block the action with an explicit reason,
+- log the action for audit purposes,
+- trigger validation after execution,
+- or notify other systems when important events occur.
+
+The most important hook pattern is the pre-execution hook. This runs after the agent has decided which tool to use and with what arguments, but before the tool actually executes. That makes it possible to inspect the real intended action rather than just the model's natural-language explanation of the action.
+
+A pre-execution hook enables several high-value control patterns:
+- command protection, such as blocking dangerous shell commands,
+- file protection, such as preventing edits to `.env`, key files, CI configuration, or deployment-sensitive assets,
+- audit trails, such as logging tool invocations as structured events,
+- notifications, such as sending important agent status changes to Slack or another operational channel,
+- and size or policy limits, such as rejecting unusually large writes or actions that fall outside allowed boundaries.
+
+The broader relevance to an AI-native SDLC is straightforward. Hooks create deterministic enforcement around non-deterministic reasoning. They let a team preserve agent flexibility while still enforcing hard boundaries for security, compliance, auditability, and operational safety. In other words, they help move AI use from "the model usually follows the rules" to "the workflow enforces the rules."
+
+### 2.4 Repository Context and Guardrail Files
 
 These are the durable instructions that shape agent behavior inside a codebase. Unlike skills, which are usually loaded on demand, repository guidance files provide persistent context that the agent should treat as standing project rules.
 
@@ -133,16 +169,16 @@ Examples:
 - service ownership maps,
 - and release or incident runbooks.
 
-### 2.4 Worker Agents
+### 2.5 Agents
 
-An extra note: These type of agents are the active workers. They explore, propose, implement, test, review, and summarize. Claude Code and Open Codex may instantiate multiple instances of agents to for instance explore the code base concurrently during a change impact analysis, code reviews, etc.
+Agents explore, propose, implement, test, review, and summarize. Claude Code and Open Codex may instantiate multiple instances of agents to for instance explore the code base concurrently during a change impact analysis, code reviews, etc.
 
 Examples:
 
 - `Claude Code` using `/feature-dev` or specialized agents such as code-explorer, code-architect, and code-reviewer.
 - `OpenAI Codex`-style agents working across a repository with access to tests, linters, planning instructions, and operational tools.
 
-Worked agents are strongest when the task has:
+Worker agents are strongest when the task has:
 
 - a defined scope,
 - visible constraints,
