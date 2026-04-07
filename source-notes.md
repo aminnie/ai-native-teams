@@ -19,9 +19,9 @@ https://github.com/philspil66/Protocol-Driven-Development-PDD/tree/main
 
 - `README.md`
 - `software-engineering-in-the-age-of-ai.md`
-- `governing-ai-supported-engineering.md`
+- `ai-native-governance.md`
 - `ai-team-role-changes.md`
-- `managing-an-ai-native-sdlc.md`
+- `ai-native-sdlc.md`
 - `ai-tools-by-sdlc-phase.md`
 - `ai-workflow-decision-matrix.md`
 - `ai-supported-engineering-adoption-roadmap.md`

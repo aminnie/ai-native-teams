@@ -2,7 +2,7 @@
 
 ## Overview
 
-This document sits between `software-engineering-in-the-age-of-ai.md` and `managing-ai-native-sdlc.md`.
+This document sits between `software-engineering-in-the-age-of-ai.md` and `ai-native-sdlc.md`.
 
 Its purpose is to make the transition from "software engineering is changing" to "we should use agents, skills, and plugins" more deliberate. Before deciding which tools to use, teams should ask a more foundational question:
 

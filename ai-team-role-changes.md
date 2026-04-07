@@ -2,7 +2,7 @@
 
 ## Overview
 
-This document sits between `governing-ai-native-engineering.md` and `managing-ai-native-sdlc.md`.
+This document sits between `ai-native-governance.md` and `ai-native-sdlc.md`.
 
 It addresses a practical organizational question that naturally follows the governance discussion:
 

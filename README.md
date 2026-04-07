@@ -35,7 +35,7 @@ This document proposed to explain:
 
 Read this first if the goal is to understand the broader change in engineering work.
 
-### `governing-ai-native-engineering.md`
+### `ai-native-governance.md`
 
 **Focus:** Why AI should first be framed as a governance and operating-model question
 
@@ -61,7 +61,7 @@ This document bridges governance principles and workflow design by explaining:
 
 Read this third if the goal is to understand how governance and AI support translate into concrete changes in team roles and day-to-day work.
 
-### `managing-ai-native-sdlc.md`
+### `ai-native-sdlc.md`
 
 **Focus:** How the SDLC should be supported by agents, skills, and plugins
 
@@ -124,9 +124,9 @@ Read this seventh if the goal is organizational execution rather than analysis a
 Read:
 
 1. `software-engineering-in-the-age-of-ai.md`
-2. `governing-ai-native-engineering.md`
+2. `ai-native-governance.md`
 3. `ai-team-role-changes.md`
-4. `managing-ai-native-sdlc.md`
+4. `ai-native-sdlc.md`
 
 Then skim:
 
@@ -141,9 +141,9 @@ This path is best for readers who want the big picture first and practical selec
 Read:
 
 1. `software-engineering-in-the-age-of-ai.md`
-2. `governing-ai-native-engineering.md`
+2. `ai-native-governance.md`
 3. `ai-team-role-changes.md`
-4. `managing-ai-native-sdlc.md`
+4. `ai-native-sdlc.md`
 5. `ai-workflow-decision-matrix.md`
 6. `ai-native-engineering-adoption-roadmap.md`
 
@@ -162,9 +162,9 @@ Read:
 
 Then go deeper with:
 
-3. `governing-ai-native-engineering.md`
+3. `ai-native-governance.md`
 4. `ai-team-role-changes.md`
-5. `managing-ai-native-sdlc.md`
+5. `ai-native-sdlc.md`
 6. `software-engineering-in-the-age-of-ai.md`
 7. `ai-native-engineering-adoption-roadmap.md`
 

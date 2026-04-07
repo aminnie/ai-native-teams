@@ -2,7 +2,7 @@
 
 ## Overview
 
-This document assumes the reader has already read `software-engineering-in-the-age-of-ai.md`, `governing-ai-native-engineering.md`, and `ai-team-role-changes.md` and accepts the central premise: software engineering is changing, teams need to adapt, and human accountability remains essential even as AI takes on more of the mechanical work.
+This document assumes the reader has already read `software-engineering-in-the-age-of-ai.md`, `ai-native-governance.md`, and `ai-team-role-changes.md` and accepts the central premise: software engineering is changing, teams need to adapt, and human accountability remains essential even as AI takes on more of the mechanical work.
 
 ### **Deterministic Control Over Non-Deterministic AI**
 
@@ -18,7 +18,7 @@ That is what makes them useful. But It is also what makes them dangerous in prod
 
 A more practical question: How should the software development lifecycle be adopted to provide such quarantees and yet continue to remain creative without losing speed, governance, consistency, code quality, or architectural integrity?
 
-This document focuses on that question. It follows the governance framing introduced in `governing-ai-native-engineering.md`, builds on the role implications outlined in `ai-team-role-changes.md`, and uses the earlier `OpenAI` article on AI-native engineering teams and the additional point 3 links in `source-notes.md`, especially the `Claude Code` `/feature-dev` workflow, to outline how tools such as `Claude Code` and `OpenAI Codex` can support the SDLC in concrete ways.
+This document focuses on that question. It follows the governance framing introduced in `ai-native-governance.md`, builds on the role implications outlined in `ai-team-role-changes.md`, and uses the earlier `OpenAI` article on AI-native engineering teams and the additional point 3 links in `source-notes.md`, especially the `Claude Code` `/feature-dev` workflow, to outline how tools such as `Claude Code` and `OpenAI Codex` can support the SDLC in concrete ways.
 
 AI coding agents such as Claude Code and Open Codex have introduced a provide a number of mechanisms intented to guide or even control AI agents towards determenistic outputs. These mechanisms were introduced because ad hoc prompting and direct `prompt -> AI -> code` vibe coding workflows do not scale well. At larger scale, those approaches create inconsistency, hidden assumptions, weak traceability, and uneven quality. These issues can often be attributed to the design of AI agent context windows. LLM calls are stateless, and as a result informaton such as the prompt, prompt history, documents referenced, etc passed into every LLM call. When the context starts exceeding design limits, the window is compacted (summarized) leading to what can be interpreted as 'memory loss'. Ad hoc LLM prompt instructions provided earlier such as "create/updete unit tests for every functional change" gets lost, and all of a sudden the test automation stops without the engineer noticing it.
 
@@ -580,7 +580,7 @@ This document uses the SDLC lens to show where AI can help. The corresponding co
 - quality gates should be runnable and meaningful,
 - and the workflow should preserve auditability of what was proposed, changed, tested, and approved.
 
-The detailed governance rationale for these controls is developed in `governing-ai-supported-engineering.md`, and the more operational rollout version appears in `ai-supported-engineering-adoption-roadmap.md`.
+The detailed governance rationale for these controls is developed in `ai-native-governance.md`, and the more operational rollout version appears in `ai-supported-engineering-adoption-roadmap.md`.
 
 ## 7. A Practical Target Operating Model
 
