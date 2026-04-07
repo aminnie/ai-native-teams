@@ -4,10 +4,6 @@
 
 This pack explains how software engineering is changing in the age of AI, how teams can redesign delivery around governed AI support, and how an organization can adopt these practices without losing quality, accountability, or architectural integrity.
 
-For the source material behind the pack, see `source-notes.md`.
-
-`Claude Code` and `OpenAI Codex` are used throughout as recurring reference examples. They are not presented as the only relevant tools, but as representative examples of two broad patterns:
-
 - guided, workflow-oriented support for bounded engineering tasks,
 - and broader, tool-connected support across multiple phases of the SDLC.
 
@@ -15,11 +11,15 @@ The pack is intended to be read as a progression:
 
 1. why software engineering is changing,
 2. why strengthen governance and operating discipline,
-3. how Scrum team roles change,
-4. how the SDLC should be supported by agents, skills, and plugins,
+3. how scrum team roles change,
+4. how to implement governance in the SDLC using tools
 5. how the main tool patterns compare,
 6. how to choose a workflow in practice,
 7. and how to adopt the model at organizational level.
+
+For the source material behind the pack, see `source-notes.md`.
+
+`Claude Code` and `OpenAI Codex` are used throughout as recurring reference examples. They are not presented as the only relevant tools, but as representative examples of two broad patterns:
 
 ## Included Documents
 
