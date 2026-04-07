@@ -2,7 +2,7 @@
 
 ## Overview
 
-This document sits between `governing-ai-supported-engineering.md` and `supporting-the-sdlc-with-agents-skills-and-plugins.md`.
+This document sits between `governing-ai-supported-engineering.md` and `managing-an-ai-native-sdlc.md`.
 
 It addresses a practical organizational question that naturally follows the governance discussion:
 

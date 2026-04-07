@@ -61,7 +61,7 @@ This document bridges governance principles and workflow design by explaining:
 
 Read this third if the goal is to understand how governance and AI support translate into concrete changes in team roles and day-to-day work.
 
-### `supporting-the-sdlc-with-agents-skills-and-plugins.md`
+### `managing-an-ai-native-sdlc.md`
 
 **Focus:** How the SDLC should be supported by agents, skills, and plugins
 
@@ -126,7 +126,7 @@ Read:
 1. `software-engineering-in-the-age-of-ai.md`
 2. `governing-ai-supported-engineering.md`
 3. `ai-team-role-changes.md`
-4. `supporting-the-sdlc-with-agents-skills-and-plugins.md`
+4. `managing-an-ai-native-sdlc.md`
 
 Then skim:
 
@@ -143,7 +143,7 @@ Read:
 1. `software-engineering-in-the-age-of-ai.md`
 2. `governing-ai-supported-engineering.md`
 3. `ai-team-role-changes.md`
-4. `supporting-the-sdlc-with-agents-skills-and-plugins.md`
+4. `managing-an-ai-native-sdlc.md`
 5. `ai-workflow-decision-matrix.md`
 6. `ai-supported-engineering-adoption-roadmap.md`
 
@@ -164,7 +164,7 @@ Then go deeper with:
 
 3. `governing-ai-supported-engineering.md`
 4. `ai-team-role-changes.md`
-5. `supporting-the-sdlc-with-agents-skills-and-plugins.md`
+5. `managing-an-ai-native-sdlc.md`
 6. `software-engineering-in-the-age-of-ai.md`
 7. `ai-supported-engineering-adoption-roadmap.md`
 

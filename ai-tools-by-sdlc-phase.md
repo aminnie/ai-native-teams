@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This note complements `software-engineering-in-the-age-of-ai.md`, `governing-ai-supported-engineering.md`, and `supporting-the-sdlc-with-agents-skills-and-plugins.md` by comparing `Claude Code` and `OpenAI Codex` phase by phase across the software development lifecycle.
+This note complements `software-engineering-in-the-age-of-ai.md`, `governing-ai-supported-engineering.md`, and `managing-an-ai-native-sdlc.md` by comparing `Claude Code` and `OpenAI Codex` phase by phase across the software development lifecycle.
 
 It is not meant as a definitive product benchmark. Both tool families evolve quickly, and actual usefulness depends heavily on repository context, workflow design, permissions, and team discipline. The table below reflects the current comparison implied by the sources in `source-notes.md` together with broader practical experience of agentic development workflows.
 

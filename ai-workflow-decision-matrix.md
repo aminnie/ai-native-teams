@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This note complements `software-engineering-in-the-age-of-ai.md`, `governing-ai-supported-engineering.md`, `ai-team-role-changes.md`, `supporting-the-sdlc-with-agents-skills-and-plugins.md`, and `ai-tools-by-sdlc-phase.md`.
+This note complements `software-engineering-in-the-age-of-ai.md`, `governing-ai-supported-engineering.md`, `ai-team-role-changes.md`, `managing-an-ai-native-sdlc.md`, and `ai-tools-by-sdlc-phase.md`.
 
 Its purpose is practical: to help an engineering team decide when to prefer a `Claude Code`-style workflow, when to prefer an `OpenAI Codex`-style workflow, and when neither should be given much autonomy.
 
