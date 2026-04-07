@@ -1,4 +1,4 @@
-# AI-Native Engineering Pack
+# AI-Native Engineering Management Pack
 
 ## Purpose
 
@@ -27,11 +27,11 @@ For the source material behind the pack, see `source-notes.md`.
 
 **Focus:** Why software engineering is changing in the age of AI
 
-This document proposed to explain:
+This document discusses:
 
 - how software development is shifting from manual code production toward verification, governance, and systems thinking,
 - how the role of the software engineer is changing,
-- and why engineering teams need to redesign their ways of working when AI is involved throughout the lifecycle.
+- and why engineering teams need to rethink their ways-of-working when AI is involved throughout the lifecycle.
 
 Read this first if the goal is to understand the broader change in engineering work.
 
@@ -39,7 +39,7 @@ Read this first if the goal is to understand the broader change in engineering w
 
 **Focus:** Why AI should first be framed as a governance and operating-model question
 
-This document bridges the conceptual gap between the first document and the tooling discussion by explaining:
+This document eloborates on:
 
 - why governance should be considered across the full lifecycle,
 - why teams need consistent ways of working in an AI-enabled environment,
@@ -52,7 +52,7 @@ Read this second if the goal is to move from the broad shift in engineering to t
 
 **Focus:** How typical Scrum team roles change in an AI-supported engineering environment
 
-This document bridges governance principles and workflow design by explaining:
+This document bridges governance principles and engineering workflow design by explaining:
 
 - how key Scrum team roles evolve when AI is part of delivery,
 - how responsibilities and expected deliverables shift,
@@ -63,12 +63,13 @@ Read this third if the goal is to understand how governance and AI support trans
 
 ### `ai-native-sdlc.md`
 
-**Focus:** How the SDLC should be supported by agents, skills, and plugins
+**Focus:** How the SDLC should be supported by guidance or controls using agents, skills, plugins and hooks.
 
 This document builds on the first three documents and explains:
 
 - how agentic AI tools can support each phase of the SDLC,
 - how agents, skills and plugins can encode repeatable engineering practices,
+- how tools provides deterministic controls over LLM tool use,
 - how governance and quality controls should be preserved,
 - and what organizational guardrails are needed so teams benefit from AI without degrading code quality or consistency.
 
@@ -191,9 +192,9 @@ The pack therefore does not argue for blind automation. It argues for a discipli
 Taken together, the pack now covers seven distinct questions:
 
 1. Why is software engineering changing?
-2. How should AI improve governance, consistency, reproducibility, traceability, and auditability across engineering work?
+2. How to improve governance, consistency, reproducibility, traceability, and auditability across AI-native engineering work?
 3. How do Scrum team roles, responsibilities, and deliverables change in an AI-supported environment?
-4. How should the SDLC be supported by agents, skills, and plugins?
+4. How should the SDLC be supported by agents, skills, plugins, and hooks?
 5. How do `Claude Code` and `OpenAI Codex` compare by phase?
 6. How should a team choose the right workflow in practice?
 7. How should an organization adopt these practices safely and effectively?
