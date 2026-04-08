@@ -137,7 +137,7 @@ AI can help product roles by:
 - Considering the AI speed of code delivery, should we combine a serres of user stories into a single pass? This may help with the context above, as well as avoiding higher magnitures of stop/start experienced with how quick AI is able to code feature, adjust tests and deliver a functional implementation ready for human validation and approval.
 - Considering that AI is able to support eloboration of requirements and other intermediate supporting artifacts, do we insert more checkpoints in the proceed for humans to validate intermediate deliverables?
 - Consider the impact of AI on cenermonies such as requirements generation and refinement (epics, features, user stories), how it support both Product Owner/Manager and enhances the Engineering team input - for example with code exploration related to the planned changes.
-- Automated test generation during AI coding session can not only help to code and maintain functional/regression test portfolios,  but also test specifications - for example a Gherkin based BDD spec provideing deep insights into what is being tested. Test portfolios now can include accessibiliity testing as well that is maintained in a similar fashion. And we automation falls short (e.g. with WCAG a11a compliance testing), AI is quite willing to provide manual testing procedures.   
+- Automated test generation during AI coding session can not only help to code and maintain functional/regression test portfolios,  but also test specifications - for example a Gherkin based BDD spec provideing deep insights into what is being tested. Test portfolios now can include accessibiliity testing as well that is maintained in a similar fashion. And we automation falls short (e.g. with WCAG a11a compliance testing), AI is quite willing to provide manual testing procedures.
 
 ### Practical implication
 
@@ -147,7 +147,7 @@ The Product Owner/Manager role becomes less about producing more tickets and mor
 
 ### Primary shift
 
-The Software Engineer shifts from being primarily the author of implementation detail toward being the designer, reviewer, and accountable owner of AI-assisted implementation.
+The Software Engineer shifts from being primarily the author of implementation detail toward being the designer, reviewer, and accountable owner of AI-assisted implementation. As AI makes code generation cheaper, the role becomes more centered on judgment, validation, and sign-off.
 
 The engineer still builds software, but the highest-value work increasingly lies in:
 
@@ -165,7 +165,7 @@ The engineer still builds software, but the highest-value work increasingly lies
 - checking for architectural consistency and long-term maintainability,
 - strengthening tests and validation logic,
 - preventing low-value generated complexity from entering the codebase,
-- and the development an maintances of AI governance artifacts.
+- and the development and maintenance of governance artifacts such as team- and repo-level AI rules, skills, and plugins.
 
 ### Responsibilities that remain strongly human
 
@@ -174,6 +174,16 @@ The engineer still builds software, but the highest-value work increasingly lies
 - risk acceptance for technical trade-offs,
 - handling novel or ambiguous problems,
 - and merge readiness on meaningful changes.
+
+### Engineers and the accountability firewall
+
+Richard Ewing: There is a legal and organizational reality that protects the softwate engineering role as AI code generations becomes cheap: you cannot sue an algorithm.
+
+In highly regulated industries such as finance and healthcare, liability still depends on a human chain of custody. If an AI-assisted change produces a transaction flow that violates SEC compliance or a healthcare workflow that breaches regulatory requirements, regulators do not fine the model. They fine the firm, and they look for the human approval behind the change.
+
+This creates what can be described as the accountability firewal). The engineer becomes the biological liability shield for the organization. A signature on a pull request, deployment approval, or release is not merely a technical confirmation. It is an acceptance of legal, financial, and operational risk.
+
+As AI generation scales, the value of that sign-off increases. Organizations will pay engineers less for typing syntax and more for exercising judgment, approving changes, and standing behind the outcome.
 
 ### Where AI assists best
 
@@ -185,9 +195,10 @@ AI can help software engineers by:
 - generating tests,
 - fixing mechanical build or type issues,
 - assisting with refactors,
+- generating technical documentation,
 - and producing initial review summaries.
 
-### Expected deliverables in an AI-supported Scrum Team
+### Expected deliverables of AI-supported Engineers
 
 - cleaner design notes,
 - bounded implementation plans,
@@ -198,7 +209,7 @@ AI can help software engineers by:
 
 ### Practical implication
 
-The engineer becomes less of a syntax producer and more of a system steward, implementation reviewer, and workflow orchestrator.
+The engineer becomes less of a syntax producer and more of a system steward, implementation reviewer, workflow orchestrator, and accountable approver of AI-assisted change.
 
 ### 3.3 Quality Engineer, Automation
 
