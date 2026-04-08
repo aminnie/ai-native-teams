@@ -2,10 +2,7 @@
 
 ## Purpose
 
-This pack explains how software engineering is changing in the age of AI, how teams can redesign delivery around governed AI support, and how an organization can adopt these practices without losing quality, accountability, or architectural integrity.
-
-- guided, workflow-oriented support for bounded engineering tasks,
-- and broader, tool-connected support across multiple phases of the SDLC.
+This document pack is an attempt to research and capture learnings intended to explain how software engineering is changing in the age of AI, how engineering teams can redesign delivery around governed AI support, and how an organization can adopt these practices without losing quality, accountability, or software solution integrity.
 
 The pack is intended to be read as a progression:
 

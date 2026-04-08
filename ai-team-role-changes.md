@@ -2,19 +2,17 @@
 
 ## Overview
 
-This document sits between `ai-native-governance.md` and `ai-native-sdlc.md`.
+This document sits between `ai-native-governance.md` and `ai-native-sdlc.md`. It addresses a practical organizational question that naturally follows the governance discussion:
 
-It addresses a practical organizational question that naturally follows the governance discussion:
+Scrum is a widely used practice in software engineering organizations today. If an engineering team continues to work as a Scrum Team, how do roles change when AI becomes part of planning, design, implementation, testing, review, release, and operations?
 
-Scrum is a widely used practice in software engineering. If a team continues to work as a Scrum Team, how do role expectations change when AI becomes part of planning, design, implementation, testing, review, release, and operations?
-
-The central argument is that Scrum does not disappear. The need for shared accountability, cross-functional collaboration, clear increments, and regular inspection and adaptation remains. What changes is the nature of the work performed inside each role.
+Is is argued thet the need for shared accountability, cross-functional collaboration, clear increments, and regular inspection and adaptation remains. Scrum does not disappear, and instead we should look what changes in the ways-of-working of each role invol;ved.
 
 The governance properties discussed in the previous document now become concrete at the team level. Consistency, reproducibility, traceability, auditability, and clear human accountability show up not only in process design, but also in who owns which decisions, who reviews which artifacts, and what each role is expected to produce.
 
 In that context, several broad shifts become visible:
 
-- more work shifts from first-pass production to oversight and refinement,
+- more work shifts from first-pass production of code and other artifacts to oversight and refinement,
 - more effort moves toward judgment, orchestration, and quality control,
 - and more deliverables become structured artifacts that help humans and AI work together consistently.
 
@@ -34,7 +32,7 @@ For each role, it outlines:
 - where AI can assist most effectively,
 - and what deliverables become more important in an AI-supported Scrum environment.
 
-## 1. The Scrum Context Should Remain Intact
+## 1. The Scrum Context Remains Intact
 
 If the team continues to work as a Scrum Team, the goal should not be to replace Scrum ceremonies with automation. The goal should be to make Scrum artifacts, events, and responsibilities more effective.
 
@@ -64,7 +62,7 @@ Many roles will spend less time creating the first draft of an artifact from scr
 
 ### 2.2 Better artifacts become more important
 
-As AI becomes part of the workflow, the quality of team artifacts matters more. Weak stories, vague acceptance criteria, undocumented constraints, and unclear standards create poor AI output and inconsistent team behavior.
+As AI becomes part of the workflow, the quality of team artifacts matters more. Weak requirements, epics and user stories, vague acceptance criteria, undocumented constraints, and unclear standards create poor AI output as well as inconsistent team behaviors.
 
 ### 2.3 Deliverables become more explicit
 
@@ -133,9 +131,17 @@ AI can help product roles by:
 - links between stories and affected systems,
 - and reviewable prototype or workflow drafts where useful.
 
+### More research needed
+
+- Do we continue to apply INVEST to user stories? Do we need input requirmenets that are bigger than user stories to asssist AI with analysis and coding activities by providing more context than single user stories in isolation
+- Considering the AI speed of code delivery, should we combine a serres of user stories into a single pass? This may help with the context above, as well as avoiding higher magnitures of stop/start experienced with how quick AI is able to code feature, adjust tests and deliver a functional implementation ready for human validation and approval.
+- Considering that AI is able to support eloboration of requirements and other intermediate supporting artifacts, do we insert more checkpoints in the proceed for humans to validate intermediate deliverables?
+- Consider the impact of AI on cenermonies such as requirements generation and refinement (epics, features, user stories), how it support both Product Owner/Manager and enhances the Engineering team input - for example with code exploration related to the planned changes.
+- Automated test generation during AI coding session can not only help to code and maintain functional/regression test portfolios,  but also test specifications - for example a Gherkin based BDD spec provideing deep insights into what is being tested. Test portfolios now can include accessibiliity testing as well that is maintained in a similar fashion. And we automation falls short (e.g. with WCAG a11a compliance testing), AI is quite willing to provide manual testing procedures.   
+
 ### Practical implication
 
-The role becomes less about producing more tickets and more about producing clearer, more decision-ready work for the team and for the AI-supported workflow.
+The Product Owner/Manager role becomes less about producing more tickets and more about producing clearer, more decision-ready work for the team and for the AI-supported workflow. At the same time, additional artifacts that actively produce and maintained provide the Product Owner/Manager with deeper levels of understanding of and the ability to create dialogue around what was implemented and how it was tested.
 
 ### 3.2 Software Engineer
 

@@ -4,7 +4,7 @@
 
 This document sits between `software-engineering-in-the-age-of-ai.md` and `ai-native-sdlc.md`.
 
-Its purpose is to make the transition from "software engineering is changing" to "we should use agents, skills, and plugins" more deliberate. Before deciding which tools to use, teams should ask a more foundational question:
+Its purpose is to make the transition from "software engineering is changing" to we should use "ai toolsby SDLC phase" more deliberate. Before deciding how and which tools to use, teams should ask a more foundational question:
 
 How should AI be used to strengthen the way engineering work is governed, coordinated, traced, reviewed, and improved across the software development lifecycle?
 
@@ -43,14 +43,14 @@ At a minimum, an engineering organization should want more of the following:
 
 Two examples appear repeatedly in the documents that follow: `Claude Code` and `OpenAI Codex`.
 
-In this series, they are best understood not simply as standalone products, but as representative examples of modern AI-supported engineering environments. Both point toward a model in which AI can do more than generate code snippets. They can help engineers explore repositories, reason about implementation choices, support review and testing, and participate in broader delivery workflows.
+In this series, they are best understood not simply as standalone products, but as representative examples of leading edge AI-supported engineering environments. Both point toward a model in which AI can do more than generate code snippets. They can help engineers explore repositories, reason about implementation choices, support review and testing, and participate in broader delivery workflows.
 
 They are referenced throughout the pack because they illustrate two important dimensions of the current landscape:
 
-- guided, workflow-oriented support for bounded engineering tasks,
-- and broader, tool-connected support across multiple phases of the software development lifecycle.
+- guided, workflow-oriented support for engineering tasks, and
+- broader, tool-connected support across multiple phases of the SDLC.
 
-These properties are valuable whether or not a given team uses `Claude Code`, `OpenAI Codex`, or any other AI tool. The tools matter, but they should be selected and configured in service of these properties.
+These properties are valuable whether or not a given team uses `Claude Code`, `OpenAI Codex`, or similar AI tools. The tools matter, but they should be selected and configured in service of these properties.
 
 ## 3. Governance Across the Engineering Lifecycle
 
@@ -73,14 +73,15 @@ It can:
 - check whether required review or test steps appear to have been skipped,
 - and produce structured records of what happened during the work.
 
-This is important because AI does not only create output. It can also enforce sequence and discipline.
+This is important because AI does not only create output artifacts. It can also enforce sequence and discipline.
 
 That means the question is not merely, "Can AI help us write code?" It is also:
 
 - Can AI help ensure that requirements and planning happened before implementation?
 - Can AI help ensure that design trade-offs were surfaced?
 - Can AI help ensure that required tests were considered?
-- Can AI help ensure that review was meaningful rather than ceremonial?
+- Can AI help ensure that artifact review was meaningful rather than ceremonial?
+- Can AI help ensure that we meeting compliance requirements?
 
 This creates a more useful basis for the discussion that follows.
 
@@ -160,8 +161,8 @@ This is not just useful for regulated environments. It is useful for ordinary en
 Traceability helps with:
 
 - debugging,
-- incident review,
-- onboarding,
+- incident management and review,
+- solution and release onboarding,
 - post-release learning,
 - architectural maintenance,
 - and resolving disagreements about intent.
@@ -176,7 +177,7 @@ Auditability is closely related to traceability, but the emphasis is slightly di
 
 Traceability asks, "Can we follow the thread from problem to change?"
 
-Auditability asks, "Can we inspect what happened, who approved it, what evidence existed, and whether the process was followed?"
+Auditability asks, "Can we inspect and demonstrate what happened, who approved it, what evidence existed, and whether the process was followed?"
 
 This matters in highly regulated environments, but it also matters in ordinary engineering organizations that care about reliability, learning, and accountability.
 
@@ -190,17 +191,13 @@ A well-audited AI-supported workflow should make it possible to see:
 - what review findings were raised,
 - and what humans approved.
 
-Without that visibility, teams are left with polished outputs but weak process confidence.
-
-That is a dangerous combination.
+Without that visibility, teams are left with polished outputs but weak process confidence. That is a dangerous combination.
 
 ## 8. Quality and Integrity of the Codebase
 
 The discussion also points to something broader than process mechanics: protecting the quality and integrity of the codebase.
 
-This is where the bridge to the next document becomes especially useful.
-
-Agents, skills, and plugins should not be introduced merely to make teams faster. They should be introduced to help teams stay coherent while moving faster.
+This is where the bridge to the next document becomes especially useful. Agents, skills, and plugins should not be introduced merely to make teams faster. They should be introduced to help teams stay coherent while moving faster.
 
 That means the system should help preserve:
 
@@ -213,16 +210,13 @@ That means the system should help preserve:
 
 If AI increases output but weakens these qualities, the team has not improved its engineering system. It has only increased its rate of code production.
 
-The more useful question is:
-
-How do we design AI-supported workflows so that they improve velocity and strengthen stewardship at the same time?
+The more useful question is: How do we design AI-supported workflows so that they improve velocity and strengthen stewardship at the same time?
 
 ## 9. Human Accountability Remains Central
 
 The stronger AI becomes, the more important this point becomes.
 
 AI can:
-
 - propose,
 - draft,
 - summarize,
@@ -241,7 +235,7 @@ Someone still needs to own:
 - release approval,
 - and production accountability.
 
-This means the right mental model is not "replace process with automation." It is "use AI to make process more explicit, more consistent, and more inspectable while keeping human accountability clear."
+This means the right mental model is not "replace process with automation." It is "use AI to make process more explicit, more consistent, more complete, and more inspectable while keeping human accountability clear."
 
 ## 10. Implications for the Next Documents
 
@@ -249,24 +243,23 @@ Once the above questions are visible, the move to AI agents, skills, and plugins
 
 At that point, tools can be evaluated in a more disciplined way:
 
-- Agents become one way to execute or support parts of the workflow.
-- Skills become one way to encode repeatable practices.
+- Agents and Skills become one way to encode repeatable practices.
 - Plugins become one way to package and distribute structured methods.
 - Repository guidance becomes one way to make expectations durable and local to the codebase.
 
-In practice, the sequence now becomes clearer. The role document should show how these governance properties reshape a Scrum team's responsibilities and deliverables. The SDLC support document should then show how AI agents, skills, plugins, and repository guidance become practical mechanisms for implementing those governance goals.
+In practice, the sequence now becomes clearer. The role document should show how these governance properties reshape an engineering team's responsibilities and deliverables. The SDLC support document should then show how AI agents, skills, plugins, and repository guidance become practical mechanisms for implementing those governance goals.
 
 In other words, the next documents should not be read as saying, "Use AI agents, skills, and plugins because they exist."
 
 It should be read as saying:
 
-If we want better governance, consistency, reproducibility, traceability, auditability, and quality control across the SDLC, then agents, skills, and plugins become practical mechanisms for implementing those goals.
+If we want better governance, consistency, reproducibility, traceability, auditability, and quality control across the SDLC, then AI support tools such as agents, skills, plugins, and hooks become practical mechanisms for implementing those goals.
 
 ## 11. Conclusion
 
-The transition from "why software engineering is changing" to "how the SDLC should be supported by AI agents, skills, and plugins" is stronger if it passes through one intermediate question:
+The transition from why software engineering is changing to how the SDLC should be supported by AI tools is stronger if it passes through one intermediate question:
 
-What do we need AI to do for the quality of our engineering system, not just for the speed of our engineering output?
+What support do we need form AI to manage the quality of our engineering system, and not just accelerate our engineering output?
 
 That question leads to a more durable and more responsible framing.
 
